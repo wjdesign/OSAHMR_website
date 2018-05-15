@@ -56,6 +56,8 @@ body {
 .mainContent .leftBlock .loginBar {
 	background: #e4f1f1;
 	height: 350px;
+    border-top-right-radius: 20px;
+    overflow: hidden;
 }
 .mainContent .leftBlock .loginBar h4 {
     margin: 0;
@@ -65,7 +67,6 @@ body {
     background: -webkit-linear-gradient(top, #84e1e2 0%,#00afb1 55%,#12adaf 100%);
     background: linear-gradient(to bottom, #84e1e2 0%,#00afb1 55%,#12adaf 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#84e1e2', endColorstr='#12adaf',GradientType=0 );
-    border-top-right-radius: 20px;
     color: #fff;
     font-size: 18px;
     font-weight: normal;
