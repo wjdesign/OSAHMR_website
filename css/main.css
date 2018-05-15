@@ -1,1 +1,96 @@
 @charset "UTF-8";
+
+body {
+	background: url(../images/background.jpg)no-repeat top center;
+	font-family: "Microsoft JhengHei",Arial;
+}
+.container {
+	width: 1000px;
+}
+.position-relative {
+	position: relative;
+}
+
+/*header*/
+.header .title .logo {
+	display: block;
+	margin: 10px 0;
+}
+.header .menuControl ul {
+	background: #d6e9f5;
+	border-radius: 50em;
+	width: 100%;
+}
+.header .menuControl ul li a {
+    float: left;
+    width: 16.66667%;
+    text-align: center;
+    font-size: 18px;
+    padding: 12px 0;
+    text-decoration: none;
+}
+.header .menuControl ul li a i {
+	font-size: 14px;
+	margin-right: 5px;
+}
+.header .menuControl ul li a.active {
+	background: #508cb5; /* Old browsers */
+	background: -moz-linear-gradient(top, #508cb5 0%, #285f85 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #508cb5 0%,#285f85 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #508cb5 0%,#285f85 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#508cb5', endColorstr='#285f85',GradientType=0 ); /* IE6-9 */
+	border-radius: 50em;
+	color: #fff;
+}
+.header .menuControl ul:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/*mainContent*/
+.mainContent .leftBlock {
+	width: 225px;
+	float: left;
+}
+.mainContent .leftBlock .loginBar {
+	background: #e4f1f1;
+	height: 350px;
+}
+.mainContent .leftBlock .loginBar h4 {
+    margin: 0;
+    padding: 15px;
+    background: #84e1e2;
+    background: -moz-linear-gradient(top, #84e1e2 0%, #00afb1 55%, #12adaf 100%);
+    background: -webkit-linear-gradient(top, #84e1e2 0%,#00afb1 55%,#12adaf 100%);
+    background: linear-gradient(to bottom, #84e1e2 0%,#00afb1 55%,#12adaf 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#84e1e2', endColorstr='#12adaf',GradientType=0 );
+    border-top-right-radius: 20px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: normal;
+}
+.mainContent .leftBlock .loginBar form input {
+	margin: 10px 0;
+    border-radius: 50em;
+    border: 1px solid #c1eae7;
+    background: transparent;
+     padding-left: 40px;
+}
+.mainContent .leftBlock .loginBar form input::placeholder {
+	color: #72b0b0;
+}
+.mainContent .leftBlock .loginBar form input:focus {
+	border-color: #72b0b0;
+}
+.mainContent .leftBlock .loginBar form input + i {
+    position: absolute;
+    top: 5px;
+    left: 14px;
+    line-height: 24px;
+    border-radius: 50em;
+    color: #72b0b0;
+    font-weight: normal;
+    font-size: 16px;
+    text-align: center;
+}
