@@ -48,20 +48,21 @@ body {
     clear: both;
 }
 
-/*mainContent*/
+/*mainContent-Left*/
 .mainContent .leftBlock {
-	width: 225px;
-	float: left;
+    width: 22%;
+    margin-right: 1%;
+    float: left;
 }
 .mainContent .leftBlock .loginBar {
 	background: #e4f1f1;
-	height: 350px;
     border-top-right-radius: 20px;
     overflow: hidden;
 }
 .mainContent .leftBlock .loginBar h4 {
     margin: 0;
     padding: 15px;
+    position: relative;
     background: #84e1e2;
     background: -moz-linear-gradient(top, #84e1e2 0%, #00afb1 55%, #12adaf 100%);
     background: -webkit-linear-gradient(top, #84e1e2 0%,#00afb1 55%,#12adaf 100%);
@@ -71,12 +72,26 @@ body {
     font-size: 18px;
     font-weight: normal;
 }
+.mainContent .leftBlock .loginBar h4 img {
+	position: absolute;
+	bottom: 0;
+    right: 0;
+}
 .mainContent .leftBlock .loginBar form input {
 	margin: 10px 0;
     border-radius: 50em;
     border: 1px solid #c1eae7;
     background: transparent;
      padding-left: 40px;
+}
+.mainContent .leftBlock .loginBar form input.passcode {
+	width: 60%;
+}
+.mainContent .leftBlock .loginBar form #passcodeImg {
+	width: 35%;
+    position: absolute;
+    top: 5px;
+    right: 5px;
 }
 .mainContent .leftBlock .loginBar form input::placeholder {
 	color: #72b0b0;
@@ -95,3 +110,144 @@ body {
     font-size: 16px;
     text-align: center;
 }
+.mainContent .leftBlock .loginBar .btn {
+    background: #d6d6d6; /* Old browsers */
+	background: -moz-linear-gradient(top, #d6d6d6 0%, #b6b6b6 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #d6d6d6 0%,#b6b6b6 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #d6d6d6 0%,#b6b6b6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6d6d6', endColorstr='#b6b6b6',GradientType=0 ); /* IE6-9 */
+	color: #fff;
+	border-radius: 50em;
+	margin-bottom: 3%;
+	border-color: transparent;
+}
+.mainContent .leftBlock .loginBar .BtnLogin {
+    width: 47%;
+    margin-left: 3%;
+    background: #31c2c4; /* Old browsers */
+	background: -moz-linear-gradient(top, #31c2c4 0%, #00a3a5 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #31c2c4 0%,#00a3a5 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #31c2c4 0%,#00a3a5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#31c2c4', endColorstr='#00a3a5',GradientType=0 ); /* IE6-9 */
+}
+.mainContent .leftBlock .loginBar .BtnRegister {
+    background: #ecc14d; /* Old browsers */
+	background: -moz-linear-gradient(top, #ecc14d 0%, #ffa44b 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #ecc14d 0%,#ffa44b 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #ecc14d 0%,#ffa44b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ecc14d', endColorstr='#ffa44b',GradientType=0 ); /* IE6-9 */
+}
+
+/*mainContent-Right*/
+.mainContent .rightBlock {
+    width: 77%;
+    height: 500px;
+    float: left;
+}
+.mainContent .rightBlock .marquee {
+	background: #f28383;
+	border-radius: 50em;
+	color: #fff;
+	padding: 5px 5px 0 5px;
+	width: 100%;
+    margin-bottom: 1%;
+}
+.mainContent .rightBlock .marquee span:after {
+	content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0px 0 30px 20px;
+    border-color: transparent transparent transparent #f28383;
+    position: absolute;
+    top: -4px;
+}
+.mainContent .rightBlock .marquee span {
+    position: absolute;
+    padding-left: 15px;
+    background: #f28383;
+    z-index: 1;
+}
+.mainContent .rightBlock .marquee marquee {
+	background: #fff;
+	border-radius: 50em;
+	color: #000;
+}
+.mainContent .rightBlock h4 {
+    background: #83dbff;
+    background: -moz-linear-gradient(top, #83dbff 0%, #7acde5 40%, #55bae4 59%);
+    background: -webkit-linear-gradient(top, #83dbff 0%,#7acde5 40%,#55bae4 59%);
+    background: linear-gradient(to bottom, #83dbff 0%,#7acde5 40%,#55bae4 59%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#83dbff', endColorstr='#55bae4',GradientType=0 );
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: #fff;
+    display: inline-block;
+    padding: 5px 15px;
+    margin: 0;
+    padding-top: 10px;
+    width: 20%;
+    font-weight: normal;
+}
+.mainContent .rightBlock .pagination {
+	margin: 5px 0 0 0;
+	float: right;
+}
+.mainContent .rightBlock .pagination li a {
+	padding: 3px 10px;
+	border: none;
+	border-radius: 0;
+}
+.mainContent .rightBlock .pagination li.active a {
+	background: #ffc13d;
+	color: #fff;
+}
+.mainContent .rightBlock .news {
+	background: #54bae4;
+    padding: 10px;
+}
+.mainContent .rightBlock .news li {
+	position: relative;
+	margin-bottom: 10px;
+}
+.mainContent .rightBlock .news li:last-child {
+	margin-bottom: 0;
+}
+.mainContent .rightBlock .news li:before {
+    content: '▶';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: #ffc13d;
+    border-radius: 50em;
+    color: #fff;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    text-align: center;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 12px;
+    line-height: 24px;
+}
+.mainContent .rightBlock .news li a {
+    padding: 5px 5px 5px 30px;
+    background: #fff;
+    border: 1px solid #fff;
+    background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(top, #ffffff 0%, #f0f0f0 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #ffffff 0%,#f0f0f0 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #ffffff 0%,#f0f0f0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f0f0f0',GradientType=0 ); /* IE6-9 */
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+}
+.mainContent .rightBlock .news li a span {
+    flex: 1;
+    text-align: right;
+    margin-left: 20px;
+}
+.mainContent .rightBlock .panel-collapse {
+}
+
