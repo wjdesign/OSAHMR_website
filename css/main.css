@@ -175,20 +175,58 @@ body {
 	color: #000;
 }
 .mainContent .rightBlock h4 {
-    background: #83dbff;
-    background: -moz-linear-gradient(top, #83dbff 0%, #7acde5 40%, #55bae4 59%);
-    background: -webkit-linear-gradient(top, #83dbff 0%,#7acde5 40%,#55bae4 59%);
-    background: linear-gradient(to bottom, #83dbff 0%,#7acde5 40%,#55bae4 59%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#83dbff', endColorstr='#55bae4',GradientType=0 );
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     color: #fff;
     display: inline-block;
-    padding: 5px 15px;
+    padding: 10px 15px 5px 60px;
+    position: relative;
     margin: 0;
-    padding-top: 10px;
-    width: 20%;
     font-weight: normal;
+}
+.mainContent .rightBlock .news h4 {
+	background: #83dbff;
+    background: -moz-linear-gradient(top, #83dbff 0%, #7acde5 40%, #55bae4 59%);
+    background: -webkit-linear-gradient(top, #83dbff 0%,#7acde5 40%,#55bae4 59%);
+    background: linear-gradient(to bottom, #83dbff 0%,#7acde5 40%,#55bae4 59%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#83dbff', endColorstr='#55bae4',GradientType=0 );
+}
+.mainContent .rightBlock .case h4 {
+	background: #a7e07e; /* Old browsers */
+	background: -moz-linear-gradient(top, #a7e07e 0%, #87d236 46%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #a7e07e 0%,#87d236 46%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #a7e07e 0%,#87d236 46%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7e07e', endColorstr='#87d236',GradientType=0 ); /* IE6-9 */
+}
+.mainContent .rightBlock .audio h4 {
+	background: #be7ee0; /* Old browsers */
+	background: -moz-linear-gradient(top, #be7ee0 0%, #9350b2 46%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #be7ee0 0%,#9350b2 46%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #be7ee0 0%,#9350b2 46%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#be7ee0', endColorstr='#9350b2',GradientType=0 ); /* IE6-9 */
+}
+.mainContent .rightBlock h4 i {
+	background: #000;
+	position: absolute;
+	left: 5px;
+    bottom: 0;
+}
+.mainContent .rightBlock h4 .newsIcon {
+	background: url(../images/newsIcon.png)no-repeat center center;
+	width: 50px;
+	height: 30px;
+}
+.mainContent .rightBlock h4 .caseIcon {
+    background: url(../images/caseIcon.png)no-repeat center center;
+    background-size: cover;
+    width: 50px;
+    height: 30px;
+}
+.mainContent .rightBlock h4 .audioIcon {
+    background: url(../images/audioIcon.png)no-repeat center center;
+    background-size: cover;
+    width: 38px;
+    height: 35px;
 }
 .mainContent .rightBlock .pagination {
 	margin: 5px 0 0 0;
@@ -198,23 +236,33 @@ body {
 	padding: 3px 10px;
 	border: none;
 	border-radius: 0;
+	color: #888;
+
 }
 .mainContent .rightBlock .pagination li.active a {
 	background: #ffc13d;
 	color: #fff;
 }
-.mainContent .rightBlock .news {
+.mainContent .rightBlock .news .items {
 	background: #54bae4;
     padding: 10px;
 }
-.mainContent .rightBlock .news li {
+.mainContent .rightBlock .case .items{
+	background: #87d236;
+    padding: 10px;
+}
+.mainContent .rightBlock .audio .items{
+	background: #934fb2;
+    padding: 10px;
+}
+.mainContent .rightBlock li.panel {
 	position: relative;
 	margin-bottom: 10px;
 }
-.mainContent .rightBlock .news li:last-child {
+.mainContent .rightBlock li.panel:last-child {
 	margin-bottom: 0;
 }
-.mainContent .rightBlock .news li:before {
+.mainContent .rightBlock li.panel:before {
     content: '▶';
     display: inline-block;
     width: 20px;
@@ -230,7 +278,7 @@ body {
     font-size: 12px;
     line-height: 24px;
 }
-.mainContent .rightBlock .news li a {
+.mainContent .rightBlock li.panel a {
     padding: 5px 5px 5px 30px;
     background: #fff;
     border: 1px solid #fff;
@@ -243,7 +291,7 @@ body {
     display: flex;
     text-decoration: none;
 }
-.mainContent .rightBlock .news li a span {
+.mainContent .rightBlock li.panel a span {
     flex: 1;
     text-align: right;
     margin-left: 20px;
