@@ -10,6 +10,9 @@ body {
 .position-relative {
 	position: relative;
 }
+form:focus {
+	outline: none;
+}
 
 /*header*/
 .header .title .logo {
@@ -138,41 +141,11 @@ body {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ecc14d', endColorstr='#ffa44b',GradientType=0 ); /* IE6-9 */
 }
 
-/*mainContent-Right*/
+/*mainContent-Right共用樣式*/
 .mainContent .rightBlock {
     width: 77%;
     height: 500px;
     float: left;
-}
-.mainContent .rightBlock .marquee {
-	background: #f28383;
-	border-radius: 50em;
-	color: #fff;
-	padding: 5px 5px 0 5px;
-	width: 100%;
-    margin-bottom: 1%;
-}
-.mainContent .rightBlock .marquee span:after {
-	content: '';
-    display: inline-block;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0px 0 30px 20px;
-    border-color: transparent transparent transparent #f28383;
-    position: absolute;
-    top: -4px;
-}
-.mainContent .rightBlock .marquee span {
-    position: absolute;
-    padding-left: 15px;
-    background: #f28383;
-    z-index: 1;
-}
-.mainContent .rightBlock .marquee marquee {
-	background: #fff;
-	border-radius: 50em;
-	color: #000;
 }
 .mainContent .rightBlock h4 {
     border-top-left-radius: 10px;
@@ -184,49 +157,11 @@ body {
     margin: 0;
     font-weight: normal;
 }
-.mainContent .rightBlock .news h4 {
-	background: #83dbff;
-    background: -moz-linear-gradient(top, #83dbff 0%, #7acde5 40%, #55bae4 59%);
-    background: -webkit-linear-gradient(top, #83dbff 0%,#7acde5 40%,#55bae4 59%);
-    background: linear-gradient(to bottom, #83dbff 0%,#7acde5 40%,#55bae4 59%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#83dbff', endColorstr='#55bae4',GradientType=0 );
-}
-.mainContent .rightBlock .case h4 {
-	background: #a7e07e; /* Old browsers */
-	background: -moz-linear-gradient(top, #a7e07e 0%, #87d236 46%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top, #a7e07e 0%,#87d236 46%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom, #a7e07e 0%,#87d236 46%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7e07e', endColorstr='#87d236',GradientType=0 ); /* IE6-9 */
-}
-.mainContent .rightBlock .audio h4 {
-	background: #be7ee0; /* Old browsers */
-	background: -moz-linear-gradient(top, #be7ee0 0%, #9350b2 46%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top, #be7ee0 0%,#9350b2 46%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom, #be7ee0 0%,#9350b2 46%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#be7ee0', endColorstr='#9350b2',GradientType=0 ); /* IE6-9 */
-}
 .mainContent .rightBlock h4 i {
 	background: #000;
 	position: absolute;
 	left: 5px;
     bottom: 0;
-}
-.mainContent .rightBlock h4 .newsIcon {
-	background: url(../images/newsIcon.png)no-repeat center center;
-	width: 50px;
-	height: 30px;
-}
-.mainContent .rightBlock h4 .caseIcon {
-    background: url(../images/caseIcon.png)no-repeat center center;
-    background-size: cover;
-    width: 50px;
-    height: 30px;
-}
-.mainContent .rightBlock h4 .audioIcon {
-    background: url(../images/audioIcon.png)no-repeat center center;
-    background-size: cover;
-    width: 38px;
-    height: 35px;
 }
 .mainContent .rightBlock .pagination {
 	margin: 5px 0 0 0;
@@ -242,18 +177,6 @@ body {
 .mainContent .rightBlock .pagination li.active a {
 	background: #ffc13d;
 	color: #fff;
-}
-.mainContent .rightBlock .news .items {
-	background: #54bae4;
-    padding: 10px;
-}
-.mainContent .rightBlock .case .items{
-	background: #87d236;
-    padding: 10px;
-}
-.mainContent .rightBlock .audio .items{
-	background: #934fb2;
-    padding: 10px;
 }
 .mainContent .rightBlock li.panel {
 	position: relative;
@@ -296,6 +219,146 @@ body {
     text-align: right;
     margin-left: 20px;
 }
-.mainContent .rightBlock .panel-collapse {
+.mainContent .rightBlock .items {
+	padding: 10px;
+}
+/*跑馬燈*/
+.mainContent .rightBlock .marquee {
+	background: #f28383;
+	border-radius: 50em;
+	color: #fff;
+	padding: 5px 5px 0 5px;
+	width: 100%;
+    margin-bottom: 1%;
+}
+.mainContent .rightBlock .marquee span:after {
+	content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0px 0 30px 20px;
+    border-color: transparent transparent transparent #f28383;
+    position: absolute;
+    top: -4px;
+}
+.mainContent .rightBlock .marquee span {
+    position: absolute;
+    padding-left: 15px;
+    background: #f28383;
+    z-index: 1;
+}
+.mainContent .rightBlock .marquee marquee {
+	background: #fff;
+	border-radius: 50em;
+	color: #000;
+}
+/*最新消息*/
+.mainContent .rightBlock .news h4 {
+	background: #83dbff;
+    background: -moz-linear-gradient(top, #83dbff 0%, #7acde5 40%, #55bae4 59%);
+    background: -webkit-linear-gradient(top, #83dbff 0%,#7acde5 40%,#55bae4 59%);
+    background: linear-gradient(to bottom, #83dbff 0%,#7acde5 40%,#55bae4 59%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#83dbff', endColorstr='#55bae4',GradientType=0 );
+}
+.mainContent .rightBlock h4 .newsIcon {
+	background: url(../images/newsIcon.png)no-repeat center center;
+	width: 50px;
+	height: 30px;
+}
+.mainContent .rightBlock .news .items {
+	background: #54bae4;
+}
+/*案例分享*/
+.mainContent .rightBlock .case h4 {
+	background: #a7e07e; /* Old browsers */
+	background: -moz-linear-gradient(top, #a7e07e 0%, #87d236 46%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #a7e07e 0%,#87d236 46%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #a7e07e 0%,#87d236 46%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7e07e', endColorstr='#87d236',GradientType=0 ); /* IE6-9 */
+}
+.mainContent .rightBlock h4 .caseIcon {
+    background: url(../images/caseIcon.png)no-repeat center center;
+    background-size: cover;
+    width: 50px;
+    height: 30px;
+}
+.mainContent .rightBlock .case .items{
+	background: #87d236;
+}
+/*影音專區*/
+.mainContent .rightBlock .audio h4 {
+	background: #be7ee0; /* Old browsers */
+	background: -moz-linear-gradient(top, #be7ee0 0%, #9350b2 46%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #be7ee0 0%,#9350b2 46%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #be7ee0 0%,#9350b2 46%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#be7ee0', endColorstr='#9350b2',GradientType=0 ); /* IE6-9 */
+}
+.mainContent .rightBlock h4 .audioIcon {
+    background: url(../images/audioIcon.png)no-repeat center center;
+    background-size: cover;
+    width: 38px;
+    height: 35px;
+}
+.mainContent .rightBlock .audio .items{
+	background: #934fb2;
+}
+.mainContent .rightBlock .audio .audioContent {
+	color: #fff;
+	position: relative;
+}
+.mainContent .rightBlock .audio .audioContent h6 {
+    font-size: 16px;
+    font-weight: normal;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #762c99;
+    box-shadow: 0 1px 0 #b775d6;
+}
+.mainContent .rightBlock .audio .audioContent .more {
+	background: #c87eea;
+    border-radius: 5px;
+    color: #fff;
+    padding: 5px 15px;
+    font-size: 14px;
+    position: absolute;
+    bottom: -25px;
+    right: 10px;
+}
+.mainContent .rightBlock .audio .audioContent iframe {
+	max-width: 100%;
+}
+/*相關連結*/
+.mainContent .rightBlock .connect h4 {
+	color: #828282;
+}
+.mainContent .rightBlock .connect h4 .connectIcon {
+	background: url(../images/connectIcon.png)no-repeat center center;
+    background-size: cover;
+    width: 26px;
+    height: 26px;
+}
+.mainContent .rightBlock .connect .items #connect {
+	white-space: nowrap;
+	overflow-x: scroll;
+}
+.mainContent .rightBlock .connect .items #connect li {
+	display: inline-block;
+    margin-right: 5px;
+}
+.mainContent .rightBlock .connect .items #connect li a img {
+	height: 46px;
+}
+/*Modal-帳號申請*/
+.modal .modal-dialog {
+	margin: 30vh auto 0;
+}
+#registerAccount .modal-dialog .modal-header {
+	background: #ecc14d;
+    background: -moz-linear-gradient(top, #ecc14d 0%, #ffa44b 100%);
+    background: -webkit-linear-gradient(top, #ecc14d 0%,#ffa44b 100%);
+    background: linear-gradient(to bottom, #ecc14d 0%,#ffa44b 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ecc14d', endColorstr='#ffa44b',GradientType=0 );
+    color: #fff;
+    font-weight: normal;
 }
 
