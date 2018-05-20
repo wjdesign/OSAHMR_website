@@ -61,6 +61,7 @@ body {
 	background: #e4f1f1;
     border-top-right-radius: 20px;
     overflow: hidden;
+    margin-bottom: 10px;
 }
 .mainContent .leftBlock .loginBar h4 {
     margin: 0;
@@ -139,6 +140,68 @@ body {
 	background: -webkit-linear-gradient(top, #ecc14d 0%,#ffa44b 100%); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(to bottom, #ecc14d 0%,#ffa44b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ecc14d', endColorstr='#ffa44b',GradientType=0 ); /* IE6-9 */
+}
+/*Bar共用樣式*/
+.mainContent .leftBlock .Bar {
+    border-radius: 10px;
+    padding: 10px;
+}
+.mainContent .leftBlock .Bar .row {
+    margin: 0;
+    padding: 0 10px;
+}
+.mainContent .leftBlock .Bar .row .listTitle {
+    margin: 5px 0;
+    text-align: center;
+    width: 100%;
+}
+.mainContent .leftBlock .Bar h5 {
+    margin: -10px 0 0;
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+    color: #fff;
+    font-weight: normal;
+}
+.mainContent .leftBlock .Bar .row .listItems {
+    background: #fff;
+    border-radius: 50em;
+    overflow: hidden;
+    height: 28px;
+    margin-bottom: 5px;
+}
+.mainContent .leftBlock .Bar .row .listItems label {
+    border-radius: 50em;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    color: #fff;
+    font-weight: normal;
+}
+.mainContent .leftBlock .Bar .row .listItems input {
+    border-radius: 50em;
+    border: none;
+    height: 28px;
+    line-height: 28px;
+    text-align: right;
+}
+/*職災資訊Bar*/
+.mainContent .leftBlock .OBInfoBar {
+    background: #f0c7c7;
+}
+.mainContent .leftBlock .OBInfoBar h5 {
+    background: #ff4e4e;
+    background: -moz-linear-gradient(top, #ff4e4e 0%, #c04040 100%);
+    background: -webkit-linear-gradient(top, #ff4e4e 0%,#c04040 100%);
+    background: linear-gradient(to bottom, #ff4e4e 0%,#c04040 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff4e4e', endColorstr='#c04040',GradientType=0 );
+}
+.mainContent .leftBlock .OBInfoBar .listTitle {
+    color: #ba3535;
+}
+.mainContent .leftBlock .OBInfoBar .row .listItems label {
+    background: #b94653;
 }
 
 /*mainContent-Right共用樣式*/
@@ -499,6 +562,22 @@ body {
 }
 #registerAccount .modal-dialog .contentInfo ol li:hover {
 	background: #e1eef1;
+}
+#registerAccount .modal-dialog .contentInfo .registerResult {
+    text-align: center;
+}
+#registerAccount .modal-dialog .contentInfo .registerResult i {
+    font-size: 60px;
+    text-align: center;
+    color: #62d879;
+    border: 1px solid #62d879;
+    padding: 20px;
+    border-radius: 50em;
+    margin: 20px auto;
+}
+#registerAccount .modal-dialog .contentInfo .registerResult p {
+    color: #62d879;
+    font-size: 18px;
 }
 /*Modal-忘記密碼*/
 #forgetPWD .modal-dialog .modal-header {

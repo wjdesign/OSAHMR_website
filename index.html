@@ -36,6 +36,7 @@
 	<div class="mainContent">
 		<div class="container">
 			<div class="row">
+				<!-- 左側Block -->
 				<div class="leftBlock">
 					<!-- 登入bar -->
 					<div class="loginBar">
@@ -60,7 +61,24 @@
 						    <a class="btn btn-default col-xs-12">查看帳號申請說明</a>
 						</form>
 					</div>
+					<!-- 職災資訊 -->
+					<div class="Bar OBInfoBar">
+						<h5>職災資訊</h5>
+						<div class="row">
+							<p class="listTitle">虛驚事故件數</p>
+							<div class="listItems">
+								<label class="col-xs-4">年度</label>
+								<input class="col-xs-8" type="text" readonly value="10059">
+							</div>
+							<div class="listItems">
+								<label class="col-xs-4">當月</label>
+								<input class="col-xs-8" type="text" readonly value="127">
+							</div>
+						</div>
+					</div>
 				</div>
+
+				<!-- 右側Block -->
 				<div class="rightBlock">
 					<!-- 公告跑馬燈 -->
 					<div class="marquee">
@@ -344,6 +362,17 @@
 		          				<button type="submit" class="BtnSubmit">我同意</button>
 		          			</div>
 	          			</form>
+	          		</div>
+	          		<!-- 送出資料 -->
+	          		<div class="contentInfo" ng-show="registerStep==3">
+	          			<h4 class="stepTitle">送出資料</h4>
+	          			<div class="registerResult">
+	          				<i class="glyphicon glyphicon-ok"></i>
+	          				<p>已成功送出資料，請至您的信箱確認驗證信。</p>
+	          			</div>
+		          		<div class="modalFooter">
+		          			<button class="BtnSubmit" data-dismiss="modal">關閉視窗</button>
+		          		</div>
 	          		</div>
 	        	</div>
 	      	</div> 
