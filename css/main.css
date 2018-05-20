@@ -10,7 +10,7 @@ body {
 .position-relative {
 	position: relative;
 }
-form:focus {
+*:focus {
 	outline: none;
 }
 
@@ -144,7 +144,6 @@ form:focus {
 /*mainContent-Right共用樣式*/
 .mainContent .rightBlock {
     width: 77%;
-    height: 500px;
     float: left;
 }
 .mainContent .rightBlock h4 {
@@ -348,17 +347,169 @@ form:focus {
 .mainContent .rightBlock .connect .items #connect li a img {
 	height: 46px;
 }
-/*Modal-帳號申請*/
-.modal .modal-dialog {
-	margin: 30vh auto 0;
+/*footer*/
+.footer .footerControl {
+	background: #eee;
+    padding: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border: 1px solid #d4d4d4;
+    text-align: center;
 }
+.footer .footerControl ul li {
+	display: inline-block;
+	margin-right: 20px;
+	padding-right: 20px;
+	border-right: 1px solid #000;
+}
+.footer .footerControl ul li:last-child {
+	border-right: none;
+}
+.footer .footerControl ul li a {
+	text-decoration: none;
+	color: #000;
+}
+.footer .footerControl ul li:last-child a {
+	color: #eca31e;
+}
+.footer .footerControl p {
+	margin-bottom: 0;
+	font-size: 12px;
+}
+
+/*Modal-common*/
+.modal .modal-dialog {
+	margin: 20vh auto 0;
+}
+.modal .modal-dialog .modal-header {
+	font-weight: normal;
+    color: #fff;
+}
+.modal .modal-dialog .modal-header h4 {
+	font-weight: normal;
+}
+.modal-dialog .modal-body form .m-b-md {
+    margin-bottom: 10px;
+    padding: 0 20px;
+    height: 30px;
+    line-height: 30px;
+}
+.modal-dialog .modal-body form .inputLabel {
+    font-weight: normal;
+    min-width: 50px;
+}
+.modal-dialog .modal-body form input[type='radio'] {
+	margin: 0 5px 0 10px;
+}
+.modal-dialog .modal-body form select {
+	height: 36px;
+    line-height: 24px;
+}
+.modal .modal-dialog .txtWarn {
+    color: #ff8080;
+}
+.modal .modal-dialog button {
+	border-radius: 5px;
+	padding: 5px 10px;
+	text-align: center;
+}
+.modal .modal-dialog .modalFooter {
+	width: 100%;
+	text-align: center;
+    margin-top: 20px;
+}
+.modal .modal-dialog .BtnReset {
+	background: #ececec;
+    border: 1px solid #d2d2d2;
+    color: #8e8e8e;
+    margin-right: 5px;
+}
+.modal .modal-dialog .BtnSubmit {
+    background: #4ea3dc;
+    border: 1px solid #45adf3;
+    color: #fff;
+}
+.modal .modal-dialog .must:after {
+	content: "*";
+	color: #ff8080;
+    display: inline-block;
+    padding-left: 3px;
+}
+/*Modal-帳號申請*/
 #registerAccount .modal-dialog .modal-header {
 	background: #ecc14d;
     background: -moz-linear-gradient(top, #ecc14d 0%, #ffa44b 100%);
     background: -webkit-linear-gradient(top, #ecc14d 0%,#ffa44b 100%);
     background: linear-gradient(to bottom, #ecc14d 0%,#ffa44b 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ecc14d', endColorstr='#ffa44b',GradientType=0 );
+}
+#registerAccount .modal-dialog a {
+	color: #ff8080;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 14px;
+	font-weight: normal;
+	text-decoration: none;
+}
+#registerAccount .modal-dialog a span {
+	padding: 0 10px;
+	width: 35px;
+    display: inline-block;
+    text-align: center;
+}
+#registerAccount .modal-dialog .contentInfo {
+	height: 350px;
+    margin-top: 10px;
+	overflow-y: scroll;
+    overflow-x: hidden;
+}
+#registerAccount .modal-dialog .contentInfo .stepTitle {
+	background: url(../images/modalTitle.jpg)no-repeat 0 bottom;
+    font-size: 24px;
+    padding-bottom: 12px;
+    margin: 25px 0;
+}
+#registerAccount .modal-dialog .contentInfo h6 {
+	font-size: 16px;
+	font-weight: normal;
+}
+#registerAccount .modal-dialog .contentInfo p {
+	color: #909090;
+    font-size: 14px;
+    line-height: 28px;
+    padding: 0 20px;
+}
+#registerAccount .modal-dialog .contentInfo ol li {
+    counter-increment: li;
+    color: #909090;
+    margin-bottom: 10px;
+    transition: .3s;
+    padding: 3px 0;
+}
+#registerAccount .modal-dialog .contentInfo ol li:before {
+	content: counter(li);
+    background: #42c6f5;
+    border-radius: 50em;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
     color: #fff;
-    font-weight: normal;
+    margin: 0 5px;
+}
+#registerAccount .modal-dialog .contentInfo ol li:hover {
+	background: #e1eef1;
+}
+/*Modal-忘記密碼*/
+#forgetPWD .modal-dialog .modal-header {
+	background: #efefef; /* Old browsers */
+	background: -moz-linear-gradient(top, #efefef 0%, #b2b2b2 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #efefef 0%,#b2b2b2 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #efefef 0%,#b2b2b2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efefef', endColorstr='#b2b2b2',GradientType=0 ); /* IE6-9 */
+	color: #7d7d7d;
+}
+#forgetPWD .modal-dialog .modal-body {
+	text-align: center;
 }
 

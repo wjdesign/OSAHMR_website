@@ -54,10 +54,10 @@
 						    	<i class="glyphicon glyphicon-lock"></i>
 						    	<img id="passcodeImg" src="images/passcode.jpg" alt="">
 						    </div>
-						    <a class="btn btn-default col-xs-6 Btnforget" data-toggle="modal" data-target="#forgetPWD">忘記密碼</a>
+						    <a class="btn btn-default col-xs-6 BtnForget" data-toggle="modal" data-target="#forgetPWD">忘記密碼</a>
 						    <button type="submit" class="btn btn-default col-xs-6 BtnLogin">登入</button>
-						    <a class="btn btn-default col-xs-12 BtnRegister" data-toggle="modal" data-target="#registerAccount">帳號申請</a>
-						    <a class="btn btn-default col-xs-12">點擊查看登入說明</a>
+						    <a class="btn btn-default col-xs-12 BtnRegister" data-toggle="modal" data-target="#registerAccount" ng-click="registerStep=1">帳號申請</a>
+						    <a class="btn btn-default col-xs-12">查看帳號申請說明</a>
 						</form>
 					</div>
 				</div>
@@ -141,13 +141,31 @@
 						<div class="items">
 							<ul id="connect">
 								<li ng-repeat="(key,value) in ConnectUrl">
-									<a href="{{value.url}}">
+									<a href="{{value.url}}" target="_blank">
 										<img src="{{value.img}}" alt="">
 									</a>
 								</li>
 							</ul>
 						</div>
 					</div>
+					<div style="clear:both;"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- footer -->
+	<div class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="footerControl">
+					<ul>
+						<li><a href="">回首頁</a></li>
+						<li><a href="">聯絡我們</a></li>
+						<li><a href="">管理專區</a></li>
+						<li><a href="">安衛技術諮詢客服專線：0800-300-636</a></li>
+					</ul>
+					<p>勞動部職業安全衛生署 總機 (02)8995-6666 	地址: 24219 新北市新莊區中平路439號南棟12樓</p>
+					<p>版權所有 ©2014 勞動部職業安全衛生署 ｜ 建議使用 IE 6.0 以上瀏覽器，在 1024 x 768 螢幕模式下瀏覽</p>
 				</div>
 			</div>
 		</div>
@@ -155,38 +173,217 @@
 
 
 	<!-- 帳號申請 -->
-	<div class="modal fade" id="registerAccount" role="dialog">
-		<div class="modal-dialog modal-sm">
+	<div class="modal fade" id="registerAccount" role="dialog" ng-init="scrollTop()">
+		<div class="modal-dialog modal-lg">
 	    	<div class="modal-content">
 	        	<div class="modal-header">
 	          		<button type="button" class="close" data-dismiss="modal">&times;</button>
 	          		<h4 class="modal-title">帳號申請</h4>
 	        	</div>
-	        	<div class="modal-body">
-	          		<p>Some text in the modal.</p>
-	        	</div>
-	        	<div class="modal-footer">
-	          		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        	<div class="modal-body" ng-init="registerStep=1">
+	        		<a ng-click="registerStep=1">1.閱讀隱私保護及安全政策</a>
+	        		<a ng-show="(registerStep==2) || (registerStep==3)" ng-click="registerStep=2"><span class="glyphicon glyphicon-circle-arrow-right"></span>2.填寫資料</a>
+	        		<a ng-show="registerStep==3"><span class="glyphicon glyphicon-circle-arrow-right"></span>3.送出資料</a>
+
+	        		<!-- 1.閱讀隱私保護及安全政策 -->
+	          		<div class="contentInfo" ng-show="registerStep==1">
+	          			<h4 class="stepTitle">隱私保護及安全政策</h4>
+	          			<h6>一、隱私保護及安全政策</h6>
+	          			<p>歡迎蒞臨安全衛生在地扎根計畫網站，勞動部職安署(以下簡稱本署)尊重並保護您在使用網際網路時的安全及隱私保護利，為了幫助您瞭解「安全衛生在地扎根計畫網站」如何保護您在使用本網站各項服務的安全、及如何蒐集、應用及保護您所提供的個人資訊，請您詳細閱讀「勞動部職安署安全衛生在地扎根計畫網站」的隱私保護及安全政策。若有任何意見，請由諮詢管道與我們聯絡。</p>
+	          			<h6>二、網路安全保護措施</h6>
+	          			<p>任何未經授權而企圖上載或更改本署所提供的各項服務及相關資訊的行為，都是嚴厲禁止而且可能觸犯法律。<br/>為了網站安全的目的和確保這項服務能夠繼續服務所有的網路使用者，本網站提供了以下的安全保護措施：
+	          				<ol>
+	          					<li>使用網路入侵偵測系統，監控網路流量，以確認未經授權而企圖上載或更改、網頁資訊或蓄意破壞者。</li>
+	          					<li>裝設防火牆防止非法入侵、破壞或竊取或破壞資料，以避免網站遭到非法使用，以保障使用者的權益。</li>
+	          					<li>裝設掃毒軟體，定期掃毒，以提供使用者更安全的網頁瀏覽環境。</li>
+	          					<li>不定期模擬駭客攻擊，演練發生安全事件時的系統回復程序，並提供適當的安全防禦等級。</li>
+	          					<li>每日進行備份作業，將所有資料備份到備援主機。</li>
+	          					<li>自動接收所有來自相關作業系統廠商或應用程式廠商所寄發的安全維護電子信通知，並依照電子信的建議，安裝適當的修改程式(PATCH)。</li>
+	          				</ol>
+	          			</p>
+	          			<h6>三、隱私權保護宣告的適用範圍</h6>
+	          			<p>以下的隱私權宣告，適用於您在使用「勞動部職安署安全衛生在地扎根計畫網站」網站服務時，所涉及的個人資料蒐集、運用與保護，但不適用於與本網站功能連結之各政府機關網站。凡經由「勞動部職安署安全衛生在地扎根計畫網站」連結之網站，各網站均有其專屬之隱私權政策，「勞動部職安署安全衛生在地扎根計畫網站」不負任何連帶責任。當您連結這些網站時，關於個人資料的保護，適用各該網站的隱私權政策。</p>
+	          			<h6>四、個人資料之蒐集及使用方式</h6>
+	          			<ol>
+	          				<li>單純在「勞動部職安署安全衛生在地扎根計畫網站」網站的瀏覽及檔案下載行為，本網站並不會蒐集任何有關個人的身份資料。</li>
+	          				<li>利用「勞動部職安署安全衛生在地扎根計畫網站」所提供的各項線上申請服務，需申請人提供個人資料時，各承辦機關會依案件辦理需求請您提供姓名、聯絡電話、e-mail、通訊住址及戶籍地址等個人最新、最真實之資料。</li>
+	          				<li>網站會記錄使用者上網的IP位址、上網時間以及在網站內所瀏覽的網頁等資料，這些資料係供本署網站管理單位內部作網站流量和網路行為調查的總量分析，以利於提昇本網站的服務品質，且僅對全體使用者行為總和進行分析，並不會對個別使用者進行分析。</li>
+	          				<li>「勞動部職安署安全衛生在地扎根計畫網站」有義務保護各申請人隱私，非經您本人同意不會自行修改或刪除任何個人資料及檔案。除非經過您事先同意或符合以下情況始得為之：<br/>
+	          					(1).違反本網站規定事項，如出現謾罵或做人身攻擊的言論時。<br/>
+	          					(2).保護或防衛相關個人的權利或所有權。<br/>
+	          					(3).為保護本網站各相關單位之權益。<br/>
+	          				</li>
+	          				<li>「勞動部職安署安全衛生在地扎根計畫網站」絕不會任意提供出售、交換、或出租任何您的個人資料給其他團體、個人或私人企業。但有下列情形者除外：<br/>
+	          					(1).配合司法單位合法的調查。<br/>
+	          					(2).配合相關職權機關依職務需要之調查或使用。<br/>
+	          					(3).基於善意相信揭露為法律需要，或為維護和改進網站服務而用於管理。<br/>
+	          				</li>
+	          			</ol>
+	          			<div class="modalFooter">
+	          				<button class="BtnSubmit" ng-click="registerStep = 2">我同意</button>
+	          			</div>
+	          		</div>
+	          		<!-- 2.填寫資料 -->
+	          		<div class="contentInfo" ng-show="registerStep==2">
+	          			<h4 class="stepTitle">填寫資料</h4>
+	          			<form ng-submit="checkRegister()">
+	          				<div class="row m-b-md">
+	          					<!-- 姓名 -->
+			          			<label class="col-xs-2 must">姓名</label>
+			          			<input class="col-xs-9" type="text" placeholder="請填寫您的真實姓名" maxlength="8" required>
+	          				</div>
+	          				<div class="row m-b-md">
+	          					<!-- 性別 -->
+			          			<label class="col-xs-2">性別</label>
+			          			<div class="col-xs-9">
+			          				<label class="inputLabel"><input type="radio" name="Gender" value="male" checked>男</label>
+			          				<label class="inputLabel"><input type="radio" name="Gender" value="female">女</label>
+			          				<label class="inputLabel"><input type="radio" name="Gender" value="other">其他</label>
+			          			</div>
+	          				</div>
+	          				<div class="row m-b-md">
+	          					<!-- 公司名稱 -->
+	          					<label class="col-xs-2 must">公司名稱</label>
+			          			<input class="col-xs-9" type="text" placeholder="請填寫您的公司名稱" maxlength="24" required>
+	          				</div>
+	          				<div class="row m-b-md">
+	          					<!-- 公司類型 -->
+	          					<label class="col-xs-2 must">公司類型</label>
+			          			<div class="col-xs-9">
+			          				<label class="inputLabel"><input type="radio" name="CompanyType" checked>製造業</label>
+			          				<label class="inputLabel"><input type="radio" name="CompanyType">營造業</label>
+			          				<label class="inputLabel"><input type="radio" name="CompanyType">政府機關</label>
+			          				<label class="inputLabel"><input type="radio" name="CompanyType">法人團體</label>
+			          				<label class="inputLabel"><input type="radio" name="CompanyType">其他</label>
+			          			</div>
+	          				</div>
+	          				<div class="row m-b-md">
+	          					<!-- 統一編號 -->
+	          					<label class="col-xs-2">統一編號</label>
+			          			<input class="col-xs-9" type="text" placeholder="請填寫您的公司統編" maxlength="8">
+	          				</div>
+	          				<div class="row m-b-md">
+	          					<!-- 部門 -->
+	          					<label class="col-xs-2">部門</label>
+			          			<input class="col-xs-9" type="text">
+	          				</div>
+	          				<div class="row m-b-md">
+	          					<!-- 職稱 -->
+	          					<label class="col-xs-2">職稱</label>
+			          			<input class="col-xs-9" type="text">
+	          				</div>
+	          				<div class="row m-b-md">
+	          					<!-- 學歷背景 -->
+	          					<label class="col-xs-2">學歷背景</label>
+			          			<select name="" class="col-xs-2">
+			          				<option value="">碩士以上</option>
+			          				<option value="">大學</option>
+			          				<option value="">高中</option>
+			          				<option value="">國中</option>
+			          			</select>
+	          				</div>
+	          				<div class="row m-b-md">
+	          					<!-- 聯絡電話 -->
+	          					<label class="col-xs-2 must">聯絡電話</label>
+			          			<input class="col-xs-9" type="tel" placeholder="請填寫您的聯絡電話" maxlength="10" required>
+	          				</div>
+	          				<div class="row m-b-md">
+	          					<!-- 聯絡住址 -->
+	          					<label class="col-xs-2 must">聯絡住址</label>
+			          			<select name="" class="col-xs-2">
+			          				<option value="台北市">台北市</option>
+									<option value="台中市">台中市</option>
+									<option value="基隆市">基隆市</option>
+									<option value="台南市">台南市</option>
+									<option value="高雄市">高雄市</option>
+									<option value="新北市">新北市</option>
+									<option value="宜蘭縣">宜蘭縣</option>
+									<option value="桃園市">桃園市</option>
+									<option value="嘉義市">嘉義市</option>
+									<option value="新竹縣">新竹縣</option>
+									<option value="苗栗縣">苗栗縣</option>
+									<option value="南投縣">南投縣</option>
+									<option value="彰化縣">彰化縣</option>
+									<option value="新竹市">新竹市</option>
+									<option value="雲林縣">雲林縣</option>
+									<option value="嘉義縣">嘉義縣</option>
+									<option value="屏東縣">屏東縣</option>
+									<option value="花蓮縣">花蓮縣</option>
+									<option value="台東縣">台東縣</option>
+									<option value="金門縣">金門縣</option>
+									<option value="澎湖縣">澎湖縣</option>
+									<option value="連江縣">連江縣</option>
+			          			</select>
+			          			<select name="" class="col-xs-2">
+			          				<option value="請選擇">請選擇</option>
+			          			</select>
+			          			<input class="col-xs-5" type="text" placeholder="請填寫您的聯絡住址" required>
+	          				</div>
+	          				<div class="row m-b-md">
+	          					<!-- 電子郵件 -->
+	          					<label class="col-xs-2 must">電子郵件</label>
+			          			<input class="col-xs-9" type="email" placeholder="請填寫您的電子郵件" required>
+	          				</div>
+	          				<div class="row m-b-md">
+	          					<!-- 帳號 -->
+	          					<label class="col-xs-2 must">帳號</label>
+			          			<input class="col-xs-9" type="text" placeholder="請填寫您欲申請的帳號" required>
+	          				</div>
+	          				<div class="row m-b-md">
+	          					<!-- 帳號 -->
+	          					<label class="col-xs-2 must">密碼</label>
+			          			<input class="col-xs-9" type="password" placeholder="密碼為8位數以上，須包含符號、英文大小寫、數字之組合" required>
+	          				</div>
+	          				<div class="row m-b-md">
+	          					<!-- 確認密碼 -->
+	          					<label class="col-xs-2 must">確認密碼</label>
+			          			<input class="col-xs-9" type="password" placeholder="請再輸入一次您的密碼" required>
+	          				</div>
+		          			<div class="modalFooter">
+		          				<button type="reset" class="BtnReset" ng-click="registerStep = 1">上一頁</button>
+		          				<button type="submit" class="BtnSubmit">我同意</button>
+		          			</div>
+	          			</form>
+	          		</div>
 	        	</div>
 	      	</div> 
 	    </div>
   	</div>
 	<!-- 忘記密碼 -->
 	<div class="modal fade" id="forgetPWD" role="dialog">
-		<div class="modal-dialog modal-sm">
+		<div class="modal-dialog">
 	    	<div class="modal-content">
 	        	<div class="modal-header">
 	          		<button type="button" class="close" data-dismiss="modal">&times;</button>
 	          		<h4 class="modal-title">忘記密碼</h4>
 	        	</div>
 	        	<div class="modal-body">
-	          		<p>Some text in the modal.</p>
-	        	</div>
-	        	<div class="modal-footer">
-	          		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	          		<p><span class="txtWarn">請輸入您申請帳號時使用的相關資料，以便找回您的密碼。</span></p>
+	          		<form ng-submit="submitForgetPWD()">
+	          			<div class="row m-b-md">
+		          			<label class="col-xs-2 must">帳號</label>
+		          			<input class="col-xs-9" type="text" placeholder="請輸入您的帳號" required>
+		          		</div>
+	          			<div class="row m-b-md">
+		          			<label class="col-xs-2 must">信箱</label>
+		          			<input class="col-xs-9" type="email" placeholder="請輸入您註冊時使用的信箱" required>
+		          		</div>
+		          		<div class="modalFooter">
+				          	<button class="BtnReset" type="reset">重新填寫</button>
+				          	<button class="BtnSubmit" type="submit">送出表單</button>
+				        </div>
+	          		</form>
 	        	</div>
 	      	</div> 
 	    </div>
   	</div>
+
+	<script>
+	// Modal點開時自動scroll to top
+	$('.modal').on('shown.bs.modal', function () {
+		$('.modal-body div').animate({ scrollTop: 0 }, 'fast');
+	});
+
+	</script>
 </body>
 </html>

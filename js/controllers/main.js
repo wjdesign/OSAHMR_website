@@ -75,8 +75,19 @@
     		var ConnectImgNum = 8;
     		$scope.ConnectUrl = [];
     		for (var i = 1; i <= ConnectImgNum; i++) {
-    			$scope.ConnectUrl.push({'img':'images/connectImg/0'+i+'.png','url':'#'})
+    			$scope.ConnectUrl.push({'img':'images/connectImg/0'+i+'.png','url':'https://www.osha.gov.tw/'})
     		}
     	}();
+
+    	$scope.submitForgetPWD = function() {
+    		alert("已寄出驗證信至您的信箱");
+    		$("#forgetPWD").modal('hide');
+    	}
+
+    	$scope.checkRegister = function() {
+    		if (confirm("確定送出申請嗎?")) {
+    			$scope.registerStep = 3;
+    		}
+    	}
 
     });
