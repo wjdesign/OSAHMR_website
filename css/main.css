@@ -263,6 +263,7 @@ body {
 }
 .mainContent .leftBlock .SuccessionBar .listTitle {
     color: #ba3535;
+    font-size: 12px;
 }
 .mainContent .leftBlock .SuccessionBar .row .listItems input {
     text-align: center;
