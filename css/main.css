@@ -391,12 +391,20 @@ body {
 .mainContent .rightBlock li.panel:last-child {
 	margin-bottom: 0;
 }
-.mainContent .rightBlock li.panel:before {
+.mainContent .rightBlock li.panel a.collapsed:before {
+    -moz-transform:rotate(0deg);
+    -webkit-transform:rotate(0deg);
+    -o-transform:rotate(0deg);
+    -ms-transform:rotate(0deg);
+    transform:rotate(0deg);
+    background: #ffc13d;
+}
+.mainContent .rightBlock li.panel a:before {
     content: '▶';
     display: inline-block;
     width: 20px;
     height: 20px;
-    background: #ffc13d;
+    background: #ff7389;
     border-radius: 50em;
     color: #fff;
     position: absolute;
@@ -406,6 +414,12 @@ body {
     font-family: "Courier New", Courier, monospace;
     font-size: 12px;
     line-height: 24px;
+    transition: .3s;
+    -moz-transform:rotate(90deg);
+    -webkit-transform:rotate(90deg);
+    -o-transform:rotate(90deg);
+    -ms-transform:rotate(90deg);
+    transform:rotate(90deg);
 }
 .mainContent .rightBlock li.panel a {
     padding: 5px 5px 5px 30px;

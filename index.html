@@ -175,7 +175,7 @@
 						</ul>
 						<ul id="news" class="items">
 							<li ng-repeat="(key,value) in News" class="panel panel-default">
-								<a data-toggle="collapse" data-parent="#news" href="#news{{key}}">{{value.title}}
+								<a data-toggle="collapse" data-parent="#news" href="#news{{key}}" class="collapsed">{{value.title}}
 									<span>{{value.time}}</span>
 								</a>
 								<div id="news{{key}}" class="panel-collapse collapse">
@@ -197,7 +197,7 @@
 						</ul>
 						<ul id="case" class="items">
 							<li ng-repeat="(key,value) in Cases" class="panel panel-default">
-								<a data-toggle="collapse" data-parent="#case" href="#case{{key}}">{{value.title}}
+								<a data-toggle="collapse" data-parent="#case" href="#case{{key}}" class="collapsed">{{value.title}}
 									<span>{{value.time}}</span>
 								</a>
 								<div id="case{{key}}" class="panel-collapse collapse">
