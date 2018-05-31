@@ -5,7 +5,14 @@
     'use strict';
     var app = angular.module('myApp', []);
 
-    app.controller('MainCtrl', function ($scope) {
+    app.controller('MainCtrl', function ($scope, $http) {
+
+    	$scope.authcheck = false;
+
+        // 取得用戶IP
+        $http.get("https://ipinfo.io/").then(function (response) {
+            	$scope.showIP = response.data.ip;
+		});
 
     	// 假資料區
     	$scope.MsgMarquee = "本站目前正在維護中，造成您的不便請見諒。";
@@ -36,7 +43,7 @@
     			'content':'Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
     		}
     	];
-    	$scope.Cases = [
+    	$scope.Bulletins = [
     		{
     			'title':'【功能新增與調整】職業安全衛生管理報備資訊網  主要功能新增與調整通知。',
     			'time':'107/05/01',

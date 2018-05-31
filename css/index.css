@@ -1,0 +1,589 @@
+@charset "UTF-8";
+
+body {
+	background: url(../images/background.jpg)no-repeat top center;
+	font-family: "Microsoft JhengHei",Arial;
+}
+.container {
+	width: 1000px;
+}
+.position-relative {
+	position: relative;
+}
+*:focus {
+	outline: none;
+}
+
+/*header*/
+.header .title .logo {
+	display: block;
+	margin: 15px 0;
+}
+.header .menuControl ul {
+	background: #d6e9f5;
+	border-radius: 50em;
+	width: 100%;
+}
+.header .menuControl ul li a {
+    float: left;
+    width: 14.22222%;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px 0;
+    text-decoration: none;
+}
+.header .menuControl ul li a i {
+	font-size: 14px;
+	margin-right: 5px;
+}
+.header .menuControl ul li a.active {
+	background: #508cb5; /* Old browsers */
+	background: -moz-linear-gradient(top, #508cb5 0%, #285f85 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #508cb5 0%,#285f85 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #508cb5 0%,#285f85 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#508cb5', endColorstr='#285f85',GradientType=0 ); /* IE6-9 */
+	border-radius: 50em;
+	color: #fff;
+}
+.header .menuControl ul:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/*mainContent-Left*/
+.mainContent .leftBlock {
+    width: 22%;
+    margin-right: 1%;
+    float: left;
+}
+.mainContent .leftBlock .loginBar {
+	background: #e4f1f1;
+    border-top-right-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.mainContent .leftBlock .loginBar h4 {
+    margin: 0;
+    padding: 15px;
+    position: relative;
+    background: #84e1e2;
+    background: -moz-linear-gradient(top, #84e1e2 0%, #00afb1 55%, #12adaf 100%);
+    background: -webkit-linear-gradient(top, #84e1e2 0%,#00afb1 55%,#12adaf 100%);
+    background: linear-gradient(to bottom, #84e1e2 0%,#00afb1 55%,#12adaf 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#84e1e2', endColorstr='#12adaf',GradientType=0 );
+    color: #fff;
+    font-size: 18px;
+    font-weight: normal;
+}
+.mainContent .leftBlock .loginBar h4 img {
+	position: absolute;
+	bottom: 0;
+    right: 0;
+}
+.mainContent .leftBlock .loginBar form input {
+	margin: 10px 0;
+    border-radius: 50em;
+    border: 1px solid #c1eae7;
+    background: transparent;
+     padding-left: 40px;
+}
+.mainContent .leftBlock .loginBar form input.passcode {
+	width: 60%;
+}
+.mainContent .leftBlock .loginBar form #passcodeImg {
+	width: 35%;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+.mainContent .leftBlock .loginBar form input::placeholder {
+	color: #72b0b0;
+}
+.mainContent .leftBlock .loginBar form input:focus {
+	border-color: #72b0b0;
+}
+.mainContent .leftBlock .loginBar form input + i {
+    position: absolute;
+    top: 5px;
+    left: 14px;
+    line-height: 24px;
+    border-radius: 50em;
+    color: #72b0b0;
+    font-weight: normal;
+    font-size: 16px;
+    text-align: center;
+}
+.mainContent .leftBlock .loginBar .btn {
+    background: #d6d6d6; /* Old browsers */
+	background: -moz-linear-gradient(top, #d6d6d6 0%, #b6b6b6 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #d6d6d6 0%,#b6b6b6 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #d6d6d6 0%,#b6b6b6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6d6d6', endColorstr='#b6b6b6',GradientType=0 ); /* IE6-9 */
+	color: #fff;
+	border-radius: 50em;
+	margin-bottom: 3%;
+	border-color: transparent;
+}
+.mainContent .leftBlock .loginBar .BtnLogin {
+    width: 47%;
+    margin-left: 3%;
+    background: #31c2c4; /* Old browsers */
+	background: -moz-linear-gradient(top, #31c2c4 0%, #00a3a5 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #31c2c4 0%,#00a3a5 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #31c2c4 0%,#00a3a5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#31c2c4', endColorstr='#00a3a5',GradientType=0 ); /* IE6-9 */
+}
+.mainContent .leftBlock .loginBar .BtnRegister {
+    background: #ecc14d; /* Old browsers */
+	background: -moz-linear-gradient(top, #ecc14d 0%, #ffa44b 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #ecc14d 0%,#ffa44b 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #ecc14d 0%,#ffa44b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ecc14d', endColorstr='#ffa44b',GradientType=0 ); /* IE6-9 */
+}
+/*登入後bar*/
+.mainContent .leftBlock .loginInfoBar {
+    background: #e4f1f1;
+    border-top-right-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.mainContent .leftBlock .loginInfoBar h4 {
+    margin: 0;
+    padding: 15px;
+    position: relative;
+    background: #84e1e2;
+    background: -moz-linear-gradient(top, #84e1e2 0%, #00afb1 55%, #12adaf 100%);
+    background: -webkit-linear-gradient(top, #84e1e2 0%,#00afb1 55%,#12adaf 100%);
+    background: linear-gradient(to bottom, #84e1e2 0%,#00afb1 55%,#12adaf 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#84e1e2', endColorstr='#12adaf',GradientType=0 );
+    color: #fff;
+    font-size: 18px;
+    font-weight: normal;
+}
+.mainContent .leftBlock .loginInfoBar h4 img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.mainContent .leftBlock .loginInfoBar form input {
+    margin: 10px 0;
+    border-radius: 50em;
+    border: 1px solid #c1eae7;
+    background: transparent;
+    padding-left: 40px;
+}
+.mainContent .leftBlock .loginInfoBar .btn {
+    background: #d6d6d6; /* Old browsers */
+    background: -moz-linear-gradient(top, #d6d6d6 0%, #b6b6b6 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #d6d6d6 0%,#b6b6b6 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #d6d6d6 0%,#b6b6b6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6d6d6', endColorstr='#b6b6b6',GradientType=0 ); /* IE6-9 */
+    color: #fff;
+    border-radius: 50em;
+    margin-bottom: 3%;
+    border-color: transparent;
+}
+.mainContent .leftBlock .loginInfoBar .BtnLogout {
+    background: #ecc14d; /* Old browsers */
+	background: -moz-linear-gradient(top, #ecc14d 0%, #ffa44b 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #ecc14d 0%,#ffa44b 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #ecc14d 0%,#ffa44b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ecc14d', endColorstr='#ffa44b',GradientType=0 ); /* IE6-9 */
+}
+/*登入後登入bar*/
+.mainContent .leftBlock .loginInfoBar p {
+    margin:10px 0;
+}
+.mainContent .leftBlock .loginInfoBar .userName {
+    color: #f76e4a;
+}
+/*Bar共用樣式*/
+.mainContent .leftBlock .Bar {
+    border-radius: 10px;
+    padding: 15px 10px;
+    margin-bottom: 10px;
+}
+.mainContent .leftBlock .Bar .row {
+    margin: 10px 0 -20px;
+    padding: 5px 10px 10px;
+    border: 1px dashed #fff;
+}
+.mainContent .leftBlock .Bar .row .listTitle {
+    margin: 0 0 5px;
+    text-align: center;
+    width: 100%;
+}
+.mainContent .leftBlock .Bar h5 {
+    margin: -15px 0 0;
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+    color: #fff;
+    font-weight: normal;
+}
+.mainContent .leftBlock .Bar .row .listItems {
+    background: #fff;
+    border-radius: 50em;
+    overflow: hidden;
+    height: 20px;
+    margin-bottom: 5px;
+    position: relative;
+}
+.mainContent .leftBlock .Bar .row .listItems label {
+    border-radius: 50em;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: #fff;
+    font-weight: normal;
+}
+.mainContent .leftBlock .Bar .row .listItems input {
+    border-radius: 50em;
+    border: none;
+    height: 20px;
+    line-height: 20px;
+    text-align: right;
+    padding-right: 25px;
+}
+/*職災資訊Bar*/
+.mainContent .leftBlock .OBInfoBar {
+    background: #f0c7c7;
+}
+.mainContent .leftBlock .OBInfoBar h5 {
+    background: #ff4e4e;
+    background: -moz-linear-gradient(top, #ff4e4e 0%, #c04040 100%);
+    background: -webkit-linear-gradient(top, #ff4e4e 0%,#c04040 100%);
+    background: linear-gradient(to bottom, #ff4e4e 0%,#c04040 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff4e4e', endColorstr='#c04040',GradientType=0 );
+}
+.mainContent .leftBlock .OBInfoBar .listTitle {
+    color: #ba3535;
+}
+.mainContent .leftBlock .OBInfoBar .row .listItems label {
+    background: #b94653;
+    font-size: 12px;
+}
+.mainContent .leftBlock .OBInfoBar .row .listItems:after {
+    content: '件';
+    color: #b94653;
+    position: absolute;
+    right: 5px;
+    top: 2px;
+    font-size: 12px;
+}
+.mainContent .leftBlock .OBInfoBar .row .listItems:hover {
+    background: #d87e7d;
+}
+.mainContent .leftBlock .OBInfoBar .row .listItems:hover:after {
+    color: #fff;
+}
+.mainContent .leftBlock .OBInfoBar .row .listItems:hover input {
+    background: #d87e7d;
+    color: #fff;
+    text-decoration: underline;
+}
+/*網站人數統計Bar*/
+.mainContent .leftBlock .VisiteBar {
+    background: #fbedd5;
+}
+.mainContent .leftBlock .VisiteBar h5 {
+    background: #ffc321; /* Old browsers */
+    background: -moz-linear-gradient(top, #ffc321 0%, #e9a569 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #ffc321 0%,#e9a569 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #ffc321 0%,#e9a569 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffc321', endColorstr='#e9a569',GradientType=0 ); /* IE6-9 */
+}
+.mainContent .leftBlock .VisiteBar .listTitle {
+    color: #9a700b;
+}
+.mainContent .leftBlock .VisiteBar .row .listItems label {
+    background: #b94653;
+    font-size: 12px;
+}
+.mainContent .leftBlock .VisiteBar .row .listItems input {
+    text-align: center;
+    letter-spacing: 3px;
+    padding: 0 20px;
+}
+/*孕媽咪報喜Bar*/
+.mainContent .leftBlock .SuccessionBar {
+    background: #ffd3e4;
+}
+.mainContent .leftBlock .SuccessionBar h5 {
+    background: #ff68cb; /* Old browsers */
+    background: -moz-linear-gradient(top, #ff68cb 0%, #f42c73 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #ff68cb 0%,#f42c73 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #ff68cb 0%,#f42c73 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff68cb', endColorstr='#f42c73',GradientType=0 ); /* IE6-9 */
+}
+.mainContent .leftBlock .SuccessionBar .listTitle {
+    color: #ba3535;
+    font-size: 12px;
+}
+.mainContent .leftBlock .SuccessionBar .row .listItems input {
+    text-align: center;
+}
+.mainContent .leftBlock .SuccessionBar .row .listItems label {
+    background: #d84f8a;
+    font-size: 12px;
+}
+.mainContent .leftBlock .SuccessionBar .row .listItems:hover {
+    border-bottom: 1px solid #d84f8a;
+}
+.mainContent .leftBlock .SuccessionBar .row .listItems:focus-within {
+    border-bottom: 1px solid #d84f8a;
+    background: #ffe1f2;
+}
+.mainContent .leftBlock .SuccessionBar .row .listItems:focus-within input {
+    background: #ffe1f2;
+}
+.mainContent .leftBlock .SuccessionBar .row .Btn {
+    width: 48%;
+    display: inline-block;
+    border-radius: 50em;
+    border: 0;
+    background: #eee;
+    color: #969696;
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+    transition: .3s;
+}
+.mainContent .leftBlock .SuccessionBar .row .Btn.BtnSubmit {
+    background: #d84e89;
+    color: #fff;
+}
+.mainContent .leftBlock .SuccessionBar .row .Btn:hover {
+    filter: brightness(105%);
+}
+/*網站資訊Bar*/
+.mainContent .leftBlock .WebInfoBar {
+    background: #e0e0e0;
+}
+.mainContent .leftBlock .WebInfoBar h5 {
+    background: #e0e0e0; /* Old browsers */
+    background: -moz-linear-gradient(top, #d0d0d0 0%, #a0a0a0 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #d0d0d0 0%,#a0a0a0 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #d0d0d0 0%,#a0a0a0 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d0d0d0', endColorstr='#a0a0a0',GradientType=0 ); /* IE6-9 */
+}
+.mainContent .leftBlock .WebInfoBar .listTitle {
+    color: #6c6c6c;
+}
+.mainContent .leftBlock .WebInfoBar .row .listItems label {
+    background: #b94653;
+    font-size: 12px;
+}
+.mainContent .leftBlock .WebInfoBar .row .listItems input {
+    text-align: center;
+    letter-spacing: 1px;
+    padding: 0 20px;
+}
+.mainContent .leftBlock .WebInfoBar .row .webInfoItems {
+    background: #fff;
+    border-radius: 50em;
+    overflow: hidden;
+    margin-bottom: 5px;
+    position: relative;   
+}
+.mainContent .leftBlock .WebInfoBar .row .webInfoItems p {
+    font-size: 12px;
+    padding: 0;
+    margin: 5px 0 0;
+    text-align: center;
+}
+.mainContent .leftBlock .WebInfoBar .row .webInfoItems .TxtLittle {
+    display: block;
+    font-size: 12px;
+    margin: 0 0 5px;
+    width: 103%;
+    -webkit-transform: scale(.8);
+    -moz-transform: scale(.8);
+    -ms-transform: scale(.8);
+    -o-transform: scale(.8);
+    transform: scale(.8);
+}
+/*footer*/
+.footer .footerControl {
+	background: #eee;
+    padding: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border: 1px solid #d4d4d4;
+    text-align: center;
+}
+.footer .footerControl ul li {
+	display: inline-block;
+	margin-right: 20px;
+	padding-right: 20px;
+	border-right: 1px solid #000;
+}
+.footer .footerControl ul li:last-child {
+	border-right: none;
+}
+.footer .footerControl ul li a {
+	text-decoration: none;
+	color: #000;
+}
+.footer .footerControl ul li:last-child a {
+	color: #eca31e;
+}
+.footer .footerControl p {
+	margin-bottom: 0;
+	font-size: 12px;
+}
+
+/*Modal-common*/
+.modal .modal-dialog {
+	margin: 20vh auto 0;
+}
+.modal .modal-dialog .modal-header {
+	font-weight: normal;
+    color: #fff;
+}
+.modal .modal-dialog .modal-header h4 {
+	font-weight: normal;
+}
+.modal-dialog .modal-body form .m-b-md {
+    margin-bottom: 10px;
+    padding: 0 20px;
+    height: 30px;
+    line-height: 30px;
+}
+.modal-dialog .modal-body form .inputLabel {
+    font-weight: normal;
+    min-width: 50px;
+}
+.modal-dialog .modal-body form input[type='radio'] {
+	margin: 0 5px 0 10px;
+}
+.modal-dialog .modal-body form select {
+	height: 36px;
+    line-height: 24px;
+}
+.modal .modal-dialog .txtWarn {
+    color: #ff8080;
+}
+.modal .modal-dialog button {
+	border-radius: 5px;
+	padding: 5px 10px;
+	text-align: center;
+}
+.modal .modal-dialog .modalFooter {
+	width: 100%;
+	text-align: center;
+    margin-top: 20px;
+}
+.modal .modal-dialog .BtnReset {
+	background: #ececec;
+    border: 1px solid #d2d2d2;
+    color: #8e8e8e;
+    margin-right: 5px;
+}
+.modal .modal-dialog .BtnSubmit {
+    background: #4ea3dc;
+    border: 1px solid #45adf3;
+    color: #fff;
+}
+.modal .modal-dialog .must:after {
+	content: "*";
+	color: #ff8080;
+    display: inline-block;
+    padding-left: 3px;
+}
+/*Modal-帳號申請*/
+#registerAccount .modal-dialog .modal-header {
+	background: #ecc14d;
+    background: -moz-linear-gradient(top, #ecc14d 0%, #ffa44b 100%);
+    background: -webkit-linear-gradient(top, #ecc14d 0%,#ffa44b 100%);
+    background: linear-gradient(to bottom, #ecc14d 0%,#ffa44b 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ecc14d', endColorstr='#ffa44b',GradientType=0 );
+}
+#registerAccount .modal-dialog a {
+	color: #ff8080;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 14px;
+	font-weight: normal;
+	text-decoration: none;
+}
+#registerAccount .modal-dialog a span {
+	padding: 0 10px;
+	width: 35px;
+    display: inline-block;
+    text-align: center;
+}
+#registerAccount .modal-dialog .contentInfo {
+	height: 350px;
+    margin-top: 10px;
+	overflow-y: scroll;
+    overflow-x: hidden;
+}
+#registerAccount .modal-dialog .contentInfo .stepTitle {
+	background: url(../images/modalTitle.jpg)no-repeat 0 bottom;
+    font-size: 24px;
+    padding-bottom: 12px;
+    margin: 25px 0;
+}
+#registerAccount .modal-dialog .contentInfo h6 {
+	font-size: 16px;
+	font-weight: normal;
+}
+#registerAccount .modal-dialog .contentInfo p {
+	color: #909090;
+    font-size: 14px;
+    line-height: 28px;
+    padding: 0 20px;
+}
+#registerAccount .modal-dialog .contentInfo ol li {
+    counter-increment: li;
+    color: #909090;
+    margin-bottom: 10px;
+    transition: .3s;
+    padding: 3px 0;
+}
+#registerAccount .modal-dialog .contentInfo ol li:before {
+	content: counter(li);
+    background: #42c6f5;
+    border-radius: 50em;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    color: #fff;
+    margin: 0 5px;
+}
+#registerAccount .modal-dialog .contentInfo ol li:hover {
+	background: #e1eef1;
+}
+#registerAccount .modal-dialog .contentInfo .registerResult {
+    text-align: center;
+}
+#registerAccount .modal-dialog .contentInfo .registerResult i {
+    font-size: 60px;
+    text-align: center;
+    color: #62d879;
+    border: 1px solid #62d879;
+    padding: 20px;
+    border-radius: 50em;
+    margin: 20px auto;
+}
+#registerAccount .modal-dialog .contentInfo .registerResult p {
+    color: #62d879;
+    font-size: 18px;
+}
+/*Modal-忘記密碼*/
+#forgetPWD .modal-dialog .modal-header {
+	background: #efefef; /* Old browsers */
+	background: -moz-linear-gradient(top, #efefef 0%, #b2b2b2 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #efefef 0%,#b2b2b2 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #efefef 0%,#b2b2b2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efefef', endColorstr='#b2b2b2',GradientType=0 ); /* IE6-9 */
+	color: #7d7d7d;
+}
+#forgetPWD .modal-dialog .modal-body {
+	text-align: center;
+}
+
