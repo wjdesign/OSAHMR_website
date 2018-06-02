@@ -70,13 +70,6 @@
     			'content':'Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
     		}
     	];
-    	$scope.Video = [
-	    	{
-	    		'title':'【中小企業安全衛生資訊教學】',
-	    		'content':'影片內文影片內文影片內文影片內文影片內文影片內文影片內文',
-	    		'url':'https://youtu.be/P6vPWkKuDzQ'
-	    	}
-    	];
     	// 相關連結假資料
     	var CountConnectImg = function() {
     		var ConnectImgNum = 8;

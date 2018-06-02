@@ -184,6 +184,28 @@ body {
 	background: #87d236;
 }
 /*影音專區*/
+/* override position and transform in 3.3.x */
+.carousel-inner .item.left.active {
+    transform: translateX(-33%);
+}
+.carousel-inner .item.right.active {
+    transform: translateX(33%);
+}
+
+.carousel-inner .item.next {
+    transform: translateX(33%)
+}
+.carousel-inner .item.prev {
+    transform: translateX(-33%)
+}
+
+.carousel-inner .item.right,
+.carousel-inner .item.left {
+    transform: translateX(0);
+}
+
+
+.carousel-control.left,.carousel-control.right {background-image:none;}
 .mainContent .rightBlock .audio h4 {
 	background: #be7ee0; /* Old browsers */
 	background: -moz-linear-gradient(top, #be7ee0 0%, #9350b2 46%); /* FF3.6-15 */
@@ -202,7 +224,7 @@ body {
 }
 .mainContent .rightBlock .audio .audioContent {
 	color: #fff;
-	position: relative;
+	/*position: relative;*/
 }
 .mainContent .rightBlock .audio .audioContent h6 {
     font-size: 16px;
@@ -210,16 +232,7 @@ body {
     padding-bottom: 10px;
     border-bottom: 1px solid #762c99;
     box-shadow: 0 1px 0 #b775d6;
-}
-.mainContent .rightBlock .audio .audioContent .more {
-	background: #c87eea;
-    border-radius: 5px;
-    color: #fff;
-    padding: 5px 15px;
-    font-size: 14px;
-    position: absolute;
-    bottom: -25px;
-    right: 10px;
+    text-align: center;
 }
 .mainContent .rightBlock .audio .audioContent iframe {
 	max-width: 100%;
