@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+body {
+	background: url(../images/background.jpg)no-repeat top center;
+	font-family: "Microsoft JhengHei",Arial;
+}
+.container {
+	width: 1000px;
+}
+.position-relative {
+	position: relative;
+}
+*:focus {
+	outline: none;
+}
+
+
+/*最新消息*/
+.mainContent .rightBlock .odnotice {
+    padding: 10px;
+}
+.mainContent .rightBlock .odnotice h5 {
+    color: #545454;
+    background: url(../images/modalTitle.jpg)no-repeat 0 bottom;
+    font-size: 18px;
+    font-weight: normal;
+    padding-bottom: 12px;
+}
+.mainContent .rightBlock .odnotice h5 i {
+    font-size: 16px;
+    margin:0 5px;
+}
+.mainContent .rightBlock .odnotice .items {
+    padding:0;
+}
+.mainContent .rightBlock .odnotice .items ol li {
+    list-style: disc inside;
+    color: #ea6d6d;
+    transition: .3s;
+    padding: 3px;
+}
+.mainContent .rightBlock .odnotice .items ol li:hover {
+    background: #f7e9e9;
+}
+.mainContent .rightBlock .odnotice table.tips {
+    background: #eee;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.mainContent .rightBlock .odnotice table.tips tr th {
+    text-align: center;
+    background: #2d6f52;
+    border: 2px solid #fff;
+    padding: 5px;
+    color: #fff;
+}
+.mainContent .rightBlock .odnotice table.tips tr .tipsTitle {
+    text-align: right;
+    background: #5fc599;
+    color: #fff;
+}
+.mainContent .rightBlock .odnotice table.tips tr td {
+    padding: 15px;
+    text-align: center;
+    border: 2px solid #fff;
+    font-size: 16px;
+}
+.mainContent .rightBlock .odnotice .btnS i {
+    margin-right: 5px;
+}
+.mainContent .rightBlock .odnotice .btnS {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.mainContent .rightBlock .odnotice .dataSheet {
+    border:3px solid #eee;
+}
+.mainContent .rightBlock .odnotice .dataSheet tr td {
+    border:3px solid #eee;
+}
+.mainContent .rightBlock .odnotice .dataSheet tr td input[type='date'] {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.mainContent .rightBlock .odnotice .dataSheet tr td input[type='time'] {
+    margin-left: 5px;
+    margin-right: 5px;
+}

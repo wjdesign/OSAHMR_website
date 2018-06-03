@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+body {
+	background: url(../images/background.jpg)no-repeat top center;
+	font-family: "Microsoft JhengHei",Arial;
+}
+.container {
+	width: 1000px;
+}
+.position-relative {
+	position: relative;
+}
+*:focus {
+	outline: none;
+}
+
+
+/*最新消息*/
+.mainContent .rightBlock .news h4 {
+	background: #83dbff;
+    background: -moz-linear-gradient(top, #83dbff 0%, #7acde5 40%, #55bae4 59%);
+    background: -webkit-linear-gradient(top, #83dbff 0%,#7acde5 40%,#55bae4 59%);
+    background: linear-gradient(to bottom, #83dbff 0%,#7acde5 40%,#55bae4 59%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#83dbff', endColorstr='#55bae4',GradientType=0 );
+}
+.mainContent .rightBlock h4 .newsIcon {
+	background: url(../images/newsIcon.png)no-repeat center center;
+	width: 50px;
+	height: 30px;
+}
+.mainContent .rightBlock .news .items {
+	background: #54bae4;
+}
+.mainContent .rightBlock .news .items .more {
+    margin: 0;
+}
+.mainContent .rightBlock .news .items .more a {
+    float: right;
+    background-color: #31b0d5;
+    border-color: #269abc;
+}
+.mainContent .rightBlock .news .items .more a:hover {
+    filter: brightness(110%);
+}
+/*相關連結*/
+.mainContent .rightBlock .connect h4 {
+	color: #828282;
+}
+.mainContent .rightBlock .connect h4 .connectIcon {
+	background: url(../images/connectIcon.png)no-repeat center center;
+    background-size: cover;
+    width: 26px;
+    height: 26px;
+}
+.mainContent .rightBlock .connect .items #connect {
+	white-space: nowrap;
+	overflow-x: scroll;
+}
+.mainContent .rightBlock .connect .items #connect li {
+	display: inline-block;
+    margin-right: 5px;
+}
+.mainContent .rightBlock .connect .items #connect li a img {
+	height: 46px;
+}

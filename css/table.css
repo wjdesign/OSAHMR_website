@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+body {
+	background: url(../images/background.jpg)no-repeat top center;
+	font-family: "Microsoft JhengHei",Arial;
+}
+.container {
+	width: 1000px;
+}
+.position-relative {
+	position: relative;
+}
+*:focus {
+	outline: none;
+}
+
+/*Table(List版)*/
+.listViewTable {
+	width: 100%;
+}
+.listViewTable tr th {
+	background: #507CD1;
+	border: 2px solid #fff;
+	color: #fff;
+	text-align: center;
+	padding: 5px;
+}
+.listViewTable tr {
+	background: #f9f9f9;
+	transition: .3s;
+}
+.listViewTable tr:nth-child(odd) {
+	background: #e7eaf1;
+}
+.listViewTable tr:hover {
+	background: #c5cdea;
+}
+.listViewTable tr td {
+	border: 2px solid #fff;
+	color: #000;
+	text-align: left;
+	padding: 10px;
+}
+.listViewTable tr td a {
+	margin-right: 10px;
+	cursor: pointer;
+}
+.listViewTable tr td a:last-child {
+	margin-right: 0;
+}
+/*Table(Form版)*/
+.dataSheet {
+	width: 100%;
+	font-size: 12px;
+	margin-bottom: 10px;
+}
+.dataSheet tr textarea {
+	width: 100%;
+}
+.dataSheet tr td label {
+	font-weight:normal;
+}
+.dataSheet tr td {
+	padding:5px;
+	border:2px solid #fff;
+	vertical-align: middle;
+	text-align: center;
+	transition: .3s;
+}
+.dataSheet tr td input[type='radio'] {
+	margin-right: 5px;
+}
+.dataSheet tr:focus-within td {
+	background: #a2cad6;
+}
+.dataSheet tr .tableTitle {
+	background: #c6e0e8;
+	color: #4b608a;
+	text-align: right;
+	vertical-align: middle;
+	width: 12%;
+}
+.dataSheet tr .longInput {
+	width: 100%;
+}

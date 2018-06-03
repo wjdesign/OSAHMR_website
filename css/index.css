@@ -405,6 +405,130 @@ body {
     -o-transform: scale(.8);
     transform: scale(.8);
 }
+/*mainContent-Right共用樣式*/
+.mainContent .rightBlock {
+    width: 77%;
+    float: left;
+}
+.mainContent .rightBlock h4 {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: #fff;
+    display: inline-block;
+    padding: 10px 15px 5px 60px;
+    position: relative;
+    margin: 0;
+    font-weight: normal;
+}
+.mainContent .rightBlock h4 i {
+    position: absolute;
+    left: 5px;
+    bottom: 0;
+}
+.mainContent .rightBlock .pagination {
+    margin: 5px 0 0 0;
+    float: right;
+}
+.mainContent .rightBlock .pagination li a {
+    padding: 3px 10px;
+    border: none;
+    border-radius: 0;
+    color: #888;
+
+}
+.mainContent .rightBlock .pagination li.active a {
+    background: #ffc13d;
+    color: #fff;
+}
+.mainContent .rightBlock li.panel {
+    position: relative;
+    margin-bottom: 10px;
+}
+.mainContent .rightBlock li.panel:last-child {
+    margin-bottom: 0;
+}
+.mainContent .rightBlock li.panel a.collapsed:before {
+    -moz-transform:rotate(0deg);
+    -webkit-transform:rotate(0deg);
+    -o-transform:rotate(0deg);
+    -ms-transform:rotate(0deg);
+    transform:rotate(0deg);
+    background: #ffc13d;
+}
+.mainContent .rightBlock li.panel a:before {
+    content: '▶';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: #ff7389;
+    border-radius: 50em;
+    color: #fff;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    text-align: center;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 12px;
+    line-height: 24px;
+    transition: .3s;
+    -moz-transform:rotate(90deg);
+    -webkit-transform:rotate(90deg);
+    -o-transform:rotate(90deg);
+    -ms-transform:rotate(90deg);
+    transform:rotate(90deg);
+}
+.mainContent .rightBlock li.panel a {
+    padding: 5px 5px 5px 30px;
+    background: #fff;
+    border: 1px solid #fff;
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(top, #ffffff 0%, #f0f0f0 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #ffffff 0%,#f0f0f0 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #ffffff 0%,#f0f0f0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f0f0f0',GradientType=0 ); /* IE6-9 */
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+}
+.mainContent .rightBlock li.panel a span {
+    flex: 1;
+    text-align: right;
+    margin-left: 20px;
+}
+.mainContent .rightBlock .items {
+    padding: 10px;
+}
+/*跑馬燈*/
+.mainContent .rightBlock .marquee {
+    background: #f28383;
+    border-radius: 50em;
+    color: #fff;
+    padding: 5px 5px 0 5px;
+    width: 100%;
+    margin-bottom: 1%;
+}
+.mainContent .rightBlock .marquee span:after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0px 0 30px 20px;
+    border-color: transparent transparent transparent #f28383;
+    position: absolute;
+    top: -4px;
+}
+.mainContent .rightBlock .marquee span {
+    position: absolute;
+    padding-left: 15px;
+    background: #f28383;
+    z-index: 1;
+}
+.mainContent .rightBlock .marquee marquee {
+    background: #fff;
+    border-radius: 50em;
+    color: #000;
+}
 /*footer*/
 .footer .footerControl {
 	background: #eee;

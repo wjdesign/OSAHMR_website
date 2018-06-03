@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+body {
+	background: url(../images/background.jpg)no-repeat top center;
+	font-family: "Microsoft JhengHei",Arial;
+}
+.container {
+	width: 1000px;
+}
+.position-relative {
+	position: relative;
+}
+*:focus {
+	outline: none;
+}
+
+/*搜尋欄位共用樣式*/
+.searchBlock {
+	background: #eee;
+	padding: 10px;
+	margin-bottom: 10px;
+	border-radius: 10px;
+}
+.searchBlock .form-group label {
+	font-weight:normal;
+}
+
+/*橫式樣式*/
+.form-inline .searchBlock .form-group {
+	padding-right:10px;
+}
+.form-inline .searchBlock .searchSelect {
+	width:100%;
+	display: block;
+	padding-bottom:10px;
+}
+.form-inline .searchBlock .searchSelect select {
+	width: 172px;
+}
+.form-inline .searchBlock .form-group .searchTitle {
+	width: 172px;
+}
+.form-inline .searchBlock .form-group .searchContent {
+	width: 335px;
+}

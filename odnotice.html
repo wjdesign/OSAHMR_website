@@ -2,18 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>職業安全衛生管理報備資訊網</title>
+    <title>職業災害通報管理</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/searchBlock.css">
+    <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/odnotice.css">
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/angular.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/controllers/main.js"></script>
+    <script src="js/controllers/odnotice.js"></script>
 </head>
-<body ng-app="myApp" ng-controller="MainCtrl">
+<body ng-app="myApp" ng-controller="odnoticeCtrl">
 <div class="header">
     <div class="container">
         <div class="row">
@@ -23,8 +25,8 @@
             </div>
             <div class="menuControl">
                 <ul>
-                    <li><a class="active" href=""><i class="glyphicon glyphicon-home"></i>首頁</a></li>
-                    <li><a href="./odnotice.html">職業災害通報管理</a></li>
+                    <li><a href="./index.html"><i class="glyphicon glyphicon-home"></i>首頁</a></li>
+                    <li><a class="active" href="#" ng-click="OdnoticeView = 1">職業災害通報管理</a></li>
                     <li><a href="">人員訓練管理系統</a></li>
                     <li><a href="">安全衛生訓練學堂</a></li>
                     <li><a href="">安衛管理小幫手</a></li>
@@ -171,109 +173,275 @@
             </div>
 
             <!-- 右側Block -->
-            <div class="rightBlock">
+            <div class="rightBlock" ng-init="OdnoticeView = 1">
                 <!-- 公告跑馬燈 -->
                 <div class="marquee">
                     <span>公告</span>
                     <marquee behavior="" direction="">{{MsgMarquee}}</marquee>
                 </div>
-                <!-- 最新消息 -->
-                <div class="panel-group news">
-                    <h4>最新消息<i class="newsIcon"></i></h4>
-                    <ul class="pagination">
-                        <li class="previous"><a href="#">上一頁</a></li>
-                        <li class="active"><a href="">1</a></li>
-                        <li><a href="">2</a></li>
-                        <li><a href="">3</a></li>
-                        <li><a href="">...</a></li>
-                        <li class="next"><a href="#">下一頁</a></li>
-                    </ul>
-                    <ul id="news" class="items">
-                        <li ng-if="$index < 6" ng-repeat="(key,value) in News" class="panel panel-default">
-                            <a data-toggle="collapse" data-parent="#news" href="#news{{key}}" class="collapsed">{{value.title}}
-                                <span>{{value.time}}</span>
-                            </a>
-                            <div id="news{{key}}" class="panel-collapse collapse">
-                                <div class="panel-body">{{value.content}}</div>
-                            </div>
-                        </li>
-                        <li class="row more"><a class="btn btn-info btn-sm" href="./news.html">更多資訊</a></li>
-                    </ul>
-                </div>
-                <!-- 公告事項 -->
-                <div class="panel-group bulletin">
-                    <h4>公告事項<i class="bulletinIcon"></i></h4>
-                    <ul class="pagination">
-                        <li class="previous"><a href="#">上一頁</a></li>
-                        <li class="active"><a href="">1</a></li>
-                        <li><a href="">2</a></li>
-                        <li><a href="">3</a></li>
-                        <li><a href="">...</a></li>
-                        <li class="next"><a href="#">下一頁</a></li>
-                    </ul>
-                    <ul id="bulletin" class="items">
-                        <li ng-repeat="(key,value) in Bulletins" class="panel panel-default">
-                            <a data-toggle="collapse" data-parent="#bulletin" href="#bulletin{{key}}" class="collapsed">{{value.title}}
-                                <span>{{value.time}}</span>
-                            </a>
-                            <div id="bulletin{{key}}" class="panel-collapse collapse">
-                                <div class="panel-body">{{value.content}}</div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <!-- 影音專區 -->
-                <div class="panel-group audio">
-                    <h4>影音專區<i class="audioIcon"></i></h4>
-                    <ul class="pagination" ng-if="false">
-                        <li class="previous"><a href="#">上一頁</a></li>
-                        <li class="active"><a href="">1</a></li>
-                        <li><a href="">2</a></li>
-                        <li><a href="">3</a></li>
-                        <li><a href="">...</a></li>
-                        <li class="next"><a href="#">下一頁</a></li>
-                    </ul>
+                <!-- 處理流程說明 -->
+                <div class="panel-group odnotice text-center" ng-show="OdnoticeView == 1">
+                    <h5 class="text-left">職業災害通報系統<i class="glyphicon glyphicon-circle-arrow-right"></i>處理流程說明</h5>
                     <div class="items">
-                        <div class="carousel slide" id="videoSlide">
-                            <div class="carousel-inner">
-                                <div class="item active">
-                                    <div class="col-xs-4 audioContent">
-                                        <iframe src="https://www.youtube.com/embed/P6vPWkKuDzQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                                        <h6>【中小企業安全衛生資訊教學】</h6>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="col-xs-4 audioContent">
-                                        <iframe src="https://www.youtube.com/embed/P6vPWkKuDzQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                                        <h6>【中小企業安全衛生資訊教學】</h6>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="col-xs-4 audioContent">
-                                        <iframe src="https://www.youtube.com/embed/P6vPWkKuDzQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                                        <h6>【中小企業安全衛生資訊教學】</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <a class="slideControll" href="#videoSlide" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-                            <a class="slideControll" href="#videoSlide" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+                        <p class="text-left">職業災害通報處理流程</p>
+                        <table class="tips">
+                            <tr><th>發生時間</th><th>處理方式</th></tr>
+                            <tr><td class="tipsTitle">1小時內(或接獲通知後)</td><td>電話通知局本部相關人員</td></tr>
+                            <tr><td class="tipsTitle">8小時內</td><td>上網填報事故通報單 (並列印送上級簽核)</td></tr>
+                            <tr><td class="tipsTitle">5日(工作天)內</td><td>完成事故調查，並上網完整填報意外事故調查分析記錄表</td></tr>
+                        </table>
+                        <a class="btn btn-success btnS" href="javascript:void(0)" ng-click="OdnoticeView = 2"><i></i>新增案件</a>
+                        <a class="btn btn-default btnS" href="javascript:void(0)" ng-click="OdnoticeView = 3"><i></i>編輯與結案</a>
+                    </div>
+                </div>
+                <!--新增案件-->
+                <div class="panel-group odnotice text-left" ng-show="OdnoticeView == 2">
+                    <h5 class="text-left">職業災害通報系統<i class="glyphicon glyphicon-circle-arrow-right"></i>處理流程說明<i class="glyphicon glyphicon-circle-arrow-right"></i>類型選擇</h5>
+                    <div class="items">
+                        <p class="text-left">凡於工作期間 (含人員上下班通勤) 發生的事故，如有下列情形:</p>
+                        <ol>
+                            <li>同仁死亡者</li>
+                            <li>同仁嚴重身體傷害者</li>
+                            <li>公務車輛/設備嚴重損毀者</li>
+                            <li>引起媒體關注採訪者</li>
+                            <li>造成民眾傷亡者</li>
+                        </ol>
+                        <p>請於事故發生後1小時內先電話通報，並於8小時內填報</p>
+                        <a class="btn btn-danger btnS" style="" ng-click="OdnoticeView = 4"><i class="glyphicon glyphicon-pencil"></i>異常事件及人員意外事故通報單</a>
+                        <p>其他後果較輕微之事故(虛驚事故)，請於事故發生後5日(工作天)內填報</p>
+                        <a class="btn btn-danger btnS" style="margin-bottom: 10px;" ng-click="OdnoticeView = 5"><i class="glyphicon glyphicon-pencil"></i>意外事故調查分析紀錄表</a>
+                    </div>
+                </div>
+                <form class="form-inline odnotice" style="padding: 10px;" ng-show="OdnoticeView == 3">
+                    <h5 class="text-left">職業災害通報系統<i class="glyphicon glyphicon-circle-arrow-right"></i>處理流程說明<i class="glyphicon glyphicon-circle-arrow-right"></i>管理調查分析記錄表</h5>
+                    <div class="searchBlock">
+                        <div class="form-group">
+                            <label>搜尋類型：</label>
+                            <select id="inputState" class="form-control">
+                                <option selected>請選擇</option>
+                                <option>事件案號</option>
+                                <option>同仁姓名</option>
+                                <option>民眾姓名</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>關鍵字：</label>
+                            <input type="text" class="form-control searchContent" placeholder="請輸入關鍵字">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-info">送出</button>
                         </div>
                     </div>
+                    <table class="listViewTable">
+                        <tr>
+                            <th>同仁姓名</th>
+                            <th>事件起始期間</th>
+                            <th>事件地點</th>
+                            <th>執行作業</th>
+                        </tr>
+                        <tr ng-repeat="(key,value) in odNotice">
+                            <td>{{value.name}}</td>
+                            <td>{{value.time}}</td>
+                            <td>{{value.location}}</td>
+                            <td><a>編輯</a><a>刪除</a><a>結案</a></td>
+                        </tr>
+                    </table>
+                    <ul class="pagination">
+                        <li class="previous"><a href="#">上一頁</a></li>
+                        <li class="active"><a href="">1</a></li>
+                        <li><a href="">2</a></li>
+                        <li><a href="">3</a></li>
+                        <li><a href="">...</a></li>
+                        <li class="next"><a href="#">下一頁</a></li>
+                    </ul>
+                    <div style="clear:both;"></div>
+                </form>
+                <div class="odnotice" ng-show="OdnoticeView == 4 || OdnoticeView == 5">
+                    <h5 ng-show="OdnoticeView == 4" class="text-left">職業災害通報系統<i class="glyphicon glyphicon-circle-arrow-right"></i>處理流程說明<i class="glyphicon glyphicon-circle-arrow-right"></i>異常事件及人員意外事故通報單</h5>
+                    <h5 ng-show="OdnoticeView == 5" class="text-left">職業災害通報系統<i class="glyphicon glyphicon-circle-arrow-right"></i>處理流程說明<i class="glyphicon glyphicon-circle-arrow-right"></i>意外事故分析調查表</h5>
+                    <form>
+                        <table class="dataSheet">
+                            <tr>
+                                <td class="tableTitle">事件類型：</td>
+                                <td colspan="9">
+                                    <select class="longInput">
+                                        <option selected>請選擇</option>
+                                        <option selected>上/下班途中交通事故(被撞、撞人、衝撞)</option>
+                                        <option selected>工作中交通事故(被撞、撞人、衝撞)</option>
+                                        <option selected>暴力事件</option>
+                                        <option selected>墬落、滾落</option>
+                                        <option selected>跌倒、滑倒</option>
+                                        <option selected>感電</option>
+                                        <option selected>踩踏傷害</option>
+                                        <option selected>被切、割或擦、挫傷</option>
+                                        <option selected>動物、昆蟲咬傷</option>
+                                        <option selected>物體飛落</option>
+                                        <option selected>不能歸類</option>
+                                        <option selected>其他</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tableTitle">事件時間：</td>
+                                <td colspan="9">
+                                    <input type="date"><input type="time">至<input type="date"><input type="time">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tableTitle">事件地點：</td>
+                                <td colspan="9"><input class="longInput" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="4" class="tableTitle">人員資料：</td>
+                                <td width="7%" rowspan="2">同仁</td>
+                                <td width="7%">姓名</td>
+                                <td width="16%">
+                                    <input type="text" style="width:80px;">
+                                </td>
+                                <td width="9%">出生<br>年月日</td>
+                                <td width="10%">
+                                    <input type="date" style="width:80px;">
+                                </td>
+                                <td width="7%">性別</td>
+                                <td width="8%">
+                                    <select>
+                                        <option select>-</option>
+                                        <option>男</option>
+                                        <option>女</option>
+                                    </select>
+                                </td>
+                                <td width="7%">職務</td>
+                                <td width="17%">
+                                    <select>
+                                        <option select>請選擇</option>
+                                        <option>隊員</option>
+                                        <option>契約工</option>
+                                        <option>臨時工</option>
+                                        <option>專案臨時工</option>
+                                        <option>其他</option>
+                                        <option>隊長</option>
+                                        <option>分隊長</option>
+                                        <option>班長</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>工作<br>性質</td>
+                                <td colspan="7">
+                                    <select class="longInput">
+                                        <option selected>請選擇</option>
+                                        <option>割草班</option>
+                                        <option>掃路班</option>
+                                        <option>車輛班</option>
+                                        <option>資源回收</option>
+                                        <option>行政人員</option>
+                                        <option>其他</option>
+                                        <option>隊長</option>
+                                        <option>分隊長</option>
+                                        <option>班長</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">受傷<br>民眾</td>
+                                <td>姓名</td>
+                                <td><input style="width:80px;"></td>
+                                <td>出生<br>年月日</td>
+                                <td>
+                                    <input style="width:80px;">
+                                </td>
+                                <td>電話</td>
+                                <td colspan="3">
+                                    <input style="width:90%;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>地址</td>
+                                <td colspan="7">
+                                    <input style="width:96%;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tableTitle">毀損車輛機具、設備資料：</td>
+                                <td colspan="9">
+                                    <textarea cols="30" rows="10"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tableTitle">事件發生經過概述：</td>
+                                <td colspan="9">
+                                    <input class="longInput" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tableTitle" rowspan="3">處理過程：</td>
+                                <td colspan="9">
+                                    同仁狀況：
+                                    <select>
+                                        <option value="">請選擇</option>
+                                        <option value="無傷亡">無傷亡</option>
+                                        <option value="受傷/返家休養">受傷/返家休養</option>
+                                        <option value="受傷住院">受傷住院</option>
+                                        <option value="死亡">死亡</option>
+                                        <option value="其他">其他</option>
+                                    </select>
+                                    其他說明：<input type="text" style="width:50%;">
+                                    <br>
+                                    民眾狀況：
+                                    <select>
+                                        <option value="">請選擇</option>
+                                        <option value="無涉及民眾">無涉及民眾</option>
+                                        <option value="無傷亡">無傷亡</option>
+                                        <option value="受傷/返家休養">受傷/返家休養</option>
+                                        <option value="受傷住院">受傷住院</option>
+                                        <option value="死亡">死亡</option>
+                                        <option value="其他">其他</option>
+                                    </select>
+                                    其他說明：<input type="text" style="width:50%;">
+                                    <br>
+                                    本局車輛/設備狀況：
+                                    <select>
+                                        <option value="">請選擇</option>
+                                        <option value="無損毀">無損毀</option>
+                                        <option value="損壞">損壞</option>
+                                        <option value="故障">故障</option>
+                                        <option value="其他">其他</option>
+                                    </select>
+                                    其他說明：<input type="text" style="width:50%;">
+                                    <br>
+                                    民眾車輛/設備狀況：
+                                    <select>
+                                        <option value="">請選擇</option>
+                                        <option value="無損毀">無損毀</option>
+                                        <option value="損壞">損壞</option>
+                                        <option value="故障">故障</option>
+                                        <option value="其他">其他</option>
+                                    </select>其他說明：<input type="text" style="width:50%;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="9">處理狀況：<input type="text" style="width: 80%;"><br/>其他說明：<input type="text" style="width: 80%;"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="9" style="text-align: left">
+                                    <input type="radio" name="group1" id="radio1"><label for="radio1">依本局事故通報流程辦理</label>
+                                    <br/>
+                                    <input type="radio" name="group1" id="radio2"><label for="radio2">事件嚴重需請社會局協助指派社工人員前往訪視及慰助家屬：（民眾需緊急住院/開刀者，填妥家屬聯絡方式</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tableTitle">備註：</td>
+                                <td colspan="9">
+                                    <input type="text" class="longInput">
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btnS" ng-click="OdnoticeView = 1">送出</button>
+                            <button type="reset" class="btn btn-default btnS">重新填寫</button>
+                        </div>
+                    </form>
                 </div>
-                <!-- 相關連結 -->
-                <div class="panel-group connect">
-                    <h4>相關連結<i class="connectIcon"></i></h4>
-                    <div class="items">
-                        <ul id="connect">
-                            <li ng-repeat="(key,value) in ConnectUrl">
-                                <a href="{{value.url}}" target="_blank">
-                                    <img src="{{value.img}}" alt="">
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div style="clear:both;"></div>
             </div>
         </div>
     </div>
