@@ -29,7 +29,7 @@ body {
     font-size: 16px;
     margin:0 5px;
 }
-/*table*/
+/*table-listViewTable*/
 .staffTrain .listViewTable tr th {
     background: #990000;
 }
@@ -41,4 +41,9 @@ body {
 }
 .staffTrain .listViewTable tr:hover {
     background: #e8dbcb;
+}
+/*table-dataSheet*/
+.staffTrain .dataSheet tr td input[type='checkbox'] {
+    margin-left: 5px;
+    margin-right: 5px;
 }

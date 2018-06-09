@@ -14,6 +14,8 @@ app.controller('staffTrainCtrl', function ($scope, $http) {
         $scope.showIP = response.data.ip;
     });
 
+    $scope.url = "./staffTrainEdit.html";
+
     // 假資料區
     $scope.MsgMarquee = "本站目前正在維護中，造成您的不便請見諒。";
     $scope.allTrain = [
