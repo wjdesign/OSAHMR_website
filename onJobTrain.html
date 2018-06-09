@@ -2,18 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>聯絡我們</title>
+    <title>人員訓練管理系統</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/searchBlock.css">
+    <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/onJobTrain.css">
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/angular.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/controllers/main.js"></script>
+    <script src="js/controllers/onJobTrain.js"></script>
 </head>
-<body ng-app="myApp" ng-controller="MainCtrl">
+<body ng-app="myApp" ng-controller="onJobTrainCtrl">
 <div class="header">
     <div class="container">
         <div class="row">
@@ -23,14 +25,14 @@
             </div>
             <div class="menuControl">
                 <ul class="headerMenu">
-                    <li><a class="active" href="./index.html"><i class="glyphicon glyphicon-home"></i>首頁</a></li>
+                    <li><a href="./index.html"><i class="glyphicon glyphicon-home"></i>首頁</a></li>
                     <li><a href="./odnotice.html">職業災害通報管理</a></li>
                     <li class="dropdown">
-                        <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">人員訓練管理系統<span class="caret"></span></a>
+                        <a href="" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">人員訓練管理系統<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="./staffTrain.html">專業證照管理</a></li>
                             <li><a href="./licenseCount.html">證照統計管理</a></li>
-                            <li><a href="./onJobTrain.html">在職訓練管理</a></li>
+                            <li class="active"><a href="./onJobTrain.html">在職訓練管理</a></li>
                         </ul>
                     </li>
                     <li><a href="">安全衛生訓練學堂</a></li>
@@ -184,42 +186,62 @@
                     <span>公告</span>
                     <marquee behavior="" direction="">{{MsgMarquee}}</marquee>
                 </div>
-                <!-- 聯絡我們 -->
-                <div class="panel-group contact">
-                    <h5>聯絡我們</h5>
-                    <p>如果您有任何疑問，請與我們聯繫，並留下您的資料，我們將會盡快聯繫您。</p>
-                    <form class="form-horizontal">
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label must">姓名</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" placeholder="請輸入您的真實姓名" required>
-                            </div>
+                <!-- 最新消息 -->
+                <form class="form-inline onJobTrain">
+                    <h5 class="text-left">人員訓練管理系統<i class="glyphicon glyphicon-circle-arrow-right"></i>在職訓練管理</h5>
+                    <div class="searchBlock">
+                        <div class="form-group searchSelect">
+                            <label>搜尋類型：</label>
+                            <select class="form-control">
+                                <option selected>請選擇</option>
+                                <option>人員姓名</option>
+                                <option>專業身分別</option>
+                            </select>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-2 control-label must">聯絡電話</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" placeholder="請輸入您的聯絡電話" required>
-                            </div>
+                            <label>搜尋標題：</label>
+                            <input type="text" class="form-control searchTitle" placeholder="請輸入標題關鍵字">
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-2 control-label">聯絡信箱</label>
-                            <div class="col-sm-10">
-                                <input type="email" class="form-control" placeholder="請輸入您的聯絡信箱">
-                            </div>
+                            <label>搜尋內容：</label>
+                            <input type="text" class="form-control searchContent" placeholder="請輸入內容關鍵字">
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-2 control-label must">您想說的話</label>
-                            <div class="col-sm-10">
-                                <textarea class="form-control" placeholder="內容" rows="5" required></textarea>
-                            </div>
+                            <button type="submit" class="btn btn-info">送出</button>
                         </div>
-                        <div class="form-group text-center">
-                            <button type="submit" class="btn btn-primary">送出</button>
-                            <button type="reset" class="btn btn-default">重新填寫</button>
-                        </div>
-                    </form>
-                </div>
-                <div style="clear:both;"></div>
+                    </div>
+                    <table class="listViewTable">
+                        <tr>
+                            <th>所屬單位</th>
+                            <th>人員姓名</th>
+                            <th>專業身分別</th>
+                            <th>再訓日期</th>
+                            <th>訓練時數</th>
+                            <th>上課總數</th>
+                            <th>證書</th>
+                            <th>執行作業</th>
+                        </tr>
+                        <tr ng-repeat="(key,value) in allTrain">
+                            <td>{{value.unit}}</td>
+                            <td>{{value.name}}</td>
+                            <td>{{value.profession}}</td>
+                            <td>{{value.trainDate}}</td>
+                            <td>{{value.trainTime}}</td>
+                            <td>{{value.lessonTime}}</td>
+                            <td><a href="{{value.certificate}}">證書</a></td>
+                            <td><a href="{{url}}">編輯</a><a href="">刪除</a></td>
+                        </tr>
+                    </table>
+                    <ul class="pagination">
+                        <li class="previous"><a href="#">上一頁</a></li>
+                        <li class="active"><a href="">1</a></li>
+                        <li><a href="">2</a></li>
+                        <li><a href="">3</a></li>
+                        <li><a href="">...</a></li>
+                        <li class="next"><a href="#">下一頁</a></li>
+                    </ul>
+                    <div style="clear:both;"></div>
+                </form>
             </div>
         </div>
     </div>
@@ -472,25 +494,6 @@
     // Modal點開時自動scroll to top
     $('.modal').on('shown.bs.modal', function () {
         $('.modal-body div').animate({scrollTop: 0}, 'fast');
-    });
-
-    $('#videoSlide').carousel({
-        interval: 3000
-    });
-
-    $('.carousel .item').each(function () {
-        var next = $(this).next();
-        if (!next.length) {
-            next = $(this).siblings(':first');
-        }
-        next.children(':first-child').clone().appendTo($(this));
-
-        if (next.next().length > 0) {
-            next.next().children(':first-child').clone().appendTo($(this));
-        }
-        else {
-            $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
-        }
     });
 
 </script>

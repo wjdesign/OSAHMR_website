@@ -55,6 +55,10 @@ body {
 	font-size: 12px;
 	margin-bottom: 10px;
 	text-align: center;
+	border:3px solid #eee;
+}
+.dataSheet tr td {
+	border:3px solid #eee;
 }
 .dataSheet tr textarea {
 	width: 100%;
@@ -64,7 +68,6 @@ body {
 }
 .dataSheet tr td {
 	padding:5px;
-	border:2px solid #fff;
 	vertical-align: middle;
 	transition: .3s;
 }
@@ -82,8 +85,8 @@ body {
 	width: 12%;
 }
 .dataSheet tr .tableTitleLarge {
-	background: #c6e0e8;
-	color: #4b608a;
+	background: #78adbd;
+	color: #fff;
 	vertical-align: middle;
 	width: 100%;
 }

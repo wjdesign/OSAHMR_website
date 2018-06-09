@@ -27,7 +27,14 @@
                 <ul class="headerMenu">
                     <li><a href="./index.html"><i class="glyphicon glyphicon-home"></i>首頁</a></li>
                     <li><a class="active" href="#" ng-click="OdnoticeView = 1">職業災害通報管理</a></li>
-                    <li><a href="">人員訓練管理系統</a></li>
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">人員訓練管理系統<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./staffTrain.html">專業證照管理</a></li>
+                            <li><a href="./licenseCount.html">證照統計管理</a></li>
+                            <li><a href="./onJobTrain.html">在職訓練管理</a></li>
+                        </ul>
+                    </li>
                     <li><a href="">安全衛生訓練學堂</a></li>
                     <li><a href="">安衛管理小幫手</a></li>
                     <li><a href="">活動報名專區</a></li>
@@ -694,25 +701,6 @@
     // Modal點開時自動scroll to top
     $('.modal').on('shown.bs.modal', function () {
         $('.modal-body div').animate({scrollTop: 0}, 'fast');
-    });
-
-    $('#videoSlide').carousel({
-        interval: 3000
-    });
-
-    $('.carousel .item').each(function () {
-        var next = $(this).next();
-        if (!next.length) {
-            next = $(this).siblings(':first');
-        }
-        next.children(':first-child').clone().appendTo($(this));
-
-        if (next.next().length > 0) {
-            next.next().children(':first-child').clone().appendTo($(this));
-        }
-        else {
-            $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
-        }
     });
 
 </script>

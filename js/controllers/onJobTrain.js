@@ -5,7 +5,7 @@
 'use strict';
 var app = angular.module('myApp', []);
 
-app.controller('staffTrainCtrl', function ($scope, $http) {
+app.controller('onJobTrainCtrl', function ($scope, $http) {
 
     $scope.authcheck = false;
 
@@ -14,7 +14,7 @@ app.controller('staffTrainCtrl', function ($scope, $http) {
         $scope.showIP = response.data.ip;
     });
 
-    $scope.url = "./staffTrainEdit.html";
+    $scope.url = "./onJobTrainEdit.html";
     $scope.editShowName = "";
 
     // 假資料區

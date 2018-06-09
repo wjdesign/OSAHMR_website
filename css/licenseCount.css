@@ -16,38 +16,38 @@ body {
 
 
 /*員工教育訓練*/
-.mainContent .rightBlock .staffTrain {
+.mainContent .rightBlock .licenseCount {
 }
-.mainContent .rightBlock .staffTrain h5 {
+.mainContent .rightBlock .licenseCount h5 {
     color: #545454;
     background: url(../images/modalTitle.jpg)no-repeat 0 bottom;
     font-size: 18px;
     font-weight: normal;
     padding: 12px 0;
 }
-.mainContent .rightBlock .staffTrain h5 i {
+.mainContent .rightBlock .licenseCount h5 i {
     font-size: 16px;
     margin:0 5px;
 }
 /*table-listViewTable*/
-.staffTrain .listViewTable tr th {
-    background: #990000;
+.licenseCount .listViewTable tr th {
+    background: #009965;
 }
-.staffTrain .listViewTable tr {
+.licenseCount .listViewTable tr {
     background: #fff;
 }
-.staffTrain .listViewTable tr:nth-child(odd) {
-    background: #fffbd6;
+.licenseCount .listViewTable tr:nth-child(odd) {
+    background: #e3efe5;
 }
-.staffTrain .listViewTable tr:hover {
-    background: #e8dbcb;
+.licenseCount .listViewTable tr:hover {
+    background: #a8cca7;
 }
 /*table-dataSheet*/
-.staffTrain .dataSheet tr td input[type='checkbox'] {
+.licenseCount .dataSheet tr td input[type='checkbox'] {
     margin-left: 5px;
     margin-right: 5px;
 }
-.staffTrain .dataSheet tr td p.checkboxBlock {
+.licenseCount .dataSheet tr td p.checkboxBlock {
     margin-top: 5px;
     margin-bottom: 0;
 }

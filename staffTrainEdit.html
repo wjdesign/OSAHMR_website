@@ -30,11 +30,9 @@
                     <li class="dropdown">
                         <a href="" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">人員訓練管理系統<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li class="active"><a href="#">專業證照管理</a></li>
-                            <li><a href="#">證照統計管理</a></li>
-                            <li><a href="#">在職訓練管理</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">One more separated link</a></li>
+                            <li class="active"><a href="./staffTrain.html">專業證照管理</a></li>
+                            <li><a href="./licenseCount.html">證照統計管理</a></li>
+                            <li><a href="./onJobTrain.html">在職訓練管理</a></li>
                         </ul>
                     </li>
                     <li><a href="">安全衛生訓練學堂</a></li>
@@ -189,7 +187,7 @@
                     <marquee behavior="" direction="">{{MsgMarquee}}</marquee>
                 </div>
                 <!-- 專業證照管理 - 編輯 -->
-                <form class="form-inline staffTrain">
+                <form class="form-inline staffTrain text-center">
                     <h5 class="text-left">人員訓練管理系統<i class="glyphicon glyphicon-circle-arrow-right"></i>專業證照管理<i class="glyphicon glyphicon-circle-arrow-right"></i>編輯</h5>
                     <table class="dataSheet">
                         <tr>
@@ -234,7 +232,7 @@
                         </tr>
                         <tr>
                             <td class="tableTitle">人員姓名：</td>
-                            <td><input type="text" style="width: 100%;"></td>
+                            <td><input type="text" style="width: 100%;" value="張芳綺"></td>
                             <td class="tableTitle">E-Mail信箱：</td>
                             <td><input type="text" style="width: 100%;"></td>
                         </tr>
@@ -253,8 +251,8 @@
                         </tr>
                         <tr>
                             <td class="tableTitle">專業身分別：</td>
-                            <td colspan="3">
-                                <select class="longInput">
+                            <td colspan="3" class="text-left">
+                                <select>
                                     <option>請選擇</option>
                                     <option>勞工安全衛生業務主管</option>
                                     <option>勞工安全衛生管理人員</option>
@@ -276,11 +274,75 @@
                                     <option>有害物作業之人員</option>
                                     <option>一般勞工</option>
                                 </select>
-                                <p class="text-left"><input type="checkbox"><label>擔任本職務</label></p>
+                                <span class="text-primary">【 再訓起始日：<input type="date"> 】</span>
+                                <p class="checkboxBlock"><input type="checkbox" id="inJobs"><label for="inJobs">擔任本職務</label></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tableTitle">證照類別：</td>
+                            <td colspan="3">
+                                <select class="longInput">
+                                    <option>請選擇</option>
+                                    <option>工業安全技師</option>
+                                    <option>工礦衛生技師</option>
+                                    <option>勞工安全管理師</option>
+                                    <option>勞工衛生管理師</option>
+                                    <option>勞工安全衛生管理員</option>
+                                    <option>勞工安全衛生業務主管 (甲種)</option>
+                                    <option>勞工安全衛生業務主管 (乙種)</option>
+                                    <option>勞工安全衛生業務主管 (丙種)</option>
+                                    <option>甲級化學性因子作業環境測定人員</option>
+                                    <option>甲級物理性因子作業環境測定人員</option>
+                                    <option>乙級化學性因子作業環境測定人員</option>
+                                    <option>乙級物理性因子作業環境測定人員</option>
+                                    <option>施工安全評估人員</option>
+                                    <option>製程安全評估人員</option>
+                                    <option>高壓氣體作業主管</option>
+                                    <option>營造作業主管</option>
+                                    <option>有害作業主管</option>
+                                    <option>危險性機械操作人員</option>
+                                    <option>危險性設備操作人員</option>
+                                    <option>特殊作業人員 (如小型鍋爐操作人員、荷重在一公噸以上之堆高機操作人員等)</option>
+                                    <option>勞工健康服務護理人員</option>
+                                    <option>急救人員</option>
+                                    <option>其他</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tableTitle">證照名稱：</td>
+                            <td colspan="3" class="text-left">
+                                <span id="licenseName" style="margin-right: 10px;">急救人員-張芳綺.pdf</span>
+                                <a class="btn btn-danger btn-xs">刪除</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tableTitle">證照上傳：</td>
+                            <td colspan="3">
+                                <input type="file" class="longInput">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tableTitle">訓練頻率：</td>
+                            <td colspan="3" class="text-left"><span id="trainRate">急救人員(每3年至少3小時)</span><span class="trainTimeOut">【再訓截止日：2019/08/19】</span></td>
+                        </tr>
+                        <tr>
+                            <td class="tableTitle">備註：</td>
+                            <td colspan="3">
+                                <input type="text" class="longInput">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" class="text-left tableTitleLarge">■ 在職訓練相關資訊 ■</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" class="text-left">
+                                <span style="margin-right: 10px;">目前沒有明細資料</span><a class="btn btn-warning btn-xs">新增明細資料</a>
                             </td>
                         </tr>
                     </table>
-                    <div style="clear:both;"></div>
+                    <button type="submit" class="btn btn-primary">送出</button>
+                    <a href="./staffTrain.html" class="btn btn-default">取消</a>
                 </form>
             </div>
         </div>
@@ -534,25 +596,6 @@
     // Modal點開時自動scroll to top
     $('.modal').on('shown.bs.modal', function () {
         $('.modal-body div').animate({scrollTop: 0}, 'fast');
-    });
-
-    $('#videoSlide').carousel({
-        interval: 3000
-    });
-
-    $('.carousel .item').each(function () {
-        var next = $(this).next();
-        if (!next.length) {
-            next = $(this).siblings(':first');
-        }
-        next.children(':first-child').clone().appendTo($(this));
-
-        if (next.next().length > 0) {
-            next.next().children(':first-child').clone().appendTo($(this));
-        }
-        else {
-            $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
-        }
     });
 
 </script>

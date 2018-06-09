@@ -72,12 +72,6 @@ body {
     margin-right: 10px;
     margin-bottom: 10px;
 }
-.mainContent .rightBlock .odnotice .dataSheet {
-    border:3px solid #eee;
-}
-.mainContent .rightBlock .odnotice .dataSheet tr td {
-    border:3px solid #eee;
-}
 .mainContent .rightBlock .odnotice .dataSheet tr td input[type='date'] {
     margin-left: 5px;
     margin-right: 5px;
