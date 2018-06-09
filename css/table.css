@@ -40,6 +40,7 @@ body {
 	color: #000;
 	text-align: left;
 	padding: 10px;
+	vertical-align: middle;
 }
 .listViewTable tr td a {
 	margin-right: 10px;

@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>職業安全衛生管理報備資訊網</title>
+    <title>管理者登入</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/agent.css">
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/angular.min.js"></script>
@@ -186,100 +186,40 @@
                     <span>公告</span>
                     <marquee behavior="" direction="">{{MsgMarquee}}</marquee>
                 </div>
-                <!-- 最新消息 -->
-                <div class="panel-group news">
-                    <h4>最新消息<i class="newsIcon"></i></h4>
-                    <ul class="pagination">
-                        <li class="previous"><a href="#">上一頁</a></li>
-                        <li class="active"><a href="">1</a></li>
-                        <li><a href="">2</a></li>
-                        <li><a href="">3</a></li>
-                        <li><a href="">...</a></li>
-                        <li class="next"><a href="#">下一頁</a></li>
-                    </ul>
-                    <ul id="news" class="items">
-                        <li ng-if="$index < 6" ng-repeat="(key,value) in News" class="panel panel-default">
-                            <a data-toggle="collapse" data-parent="#news" href="#news{{key}}" class="collapsed">{{value.title}}
-                                <span>{{value.time}}</span>
-                            </a>
-                            <div id="news{{key}}" class="panel-collapse collapse">
-                                <div class="panel-body">{{value.content}}</div>
-                            </div>
-                        </li>
-                        <li class="row more"><a class="btn btn-info btn-sm" href="./news.html">更多資訊</a></li>
-                    </ul>
-                </div>
-                <!-- 公告事項 -->
-                <div class="panel-group bulletin">
-                    <h4>公告事項<i class="bulletinIcon"></i></h4>
-                    <ul class="pagination">
-                        <li class="previous"><a href="#">上一頁</a></li>
-                        <li class="active"><a href="">1</a></li>
-                        <li><a href="">2</a></li>
-                        <li><a href="">3</a></li>
-                        <li><a href="">...</a></li>
-                        <li class="next"><a href="#">下一頁</a></li>
-                    </ul>
-                    <ul id="bulletin" class="items">
-                        <li ng-repeat="(key,value) in Bulletins" class="panel panel-default">
-                            <a data-toggle="collapse" data-parent="#bulletin" href="#bulletin{{key}}" class="collapsed">{{value.title}}
-                                <span>{{value.time}}</span>
-                            </a>
-                            <div id="bulletin{{key}}" class="panel-collapse collapse">
-                                <div class="panel-body">{{value.content}}</div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <!-- 影音專區 -->
-                <div class="panel-group audio">
-                    <h4>影音專區<i class="audioIcon"></i></h4>
-                    <ul class="pagination" ng-if="false">
-                        <li class="previous"><a href="#">上一頁</a></li>
-                        <li class="active"><a href="">1</a></li>
-                        <li><a href="">2</a></li>
-                        <li><a href="">3</a></li>
-                        <li><a href="">...</a></li>
-                        <li class="next"><a href="#">下一頁</a></li>
-                    </ul>
-                    <div class="items">
-                        <div class="carousel slide" id="videoSlide">
-                            <div class="carousel-inner">
-                                <div class="item active">
-                                    <div class="col-xs-4 audioContent">
-                                        <iframe src="https://www.youtube.com/embed/P6vPWkKuDzQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                                        <h6>【中小企業安全衛生資訊教學】</h6>
+                <!-- 管理者登入 -->
+                <div class="panel-group agent">
+                    <h5 class="text-left">管理者登入</h5>
+                    <div class="agentBar">
+                        <div class="row">
+                            <div class="col-xs-4 agentBarIcon"><i></i></div>
+                            <div class="col-xs-8">
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-xs-4 control-label">管理者帳號</label>
+                                        <div class="col-xs-8">
+                                            <input type="email" class="form-control" placeholder="請輸入您的管理者帳號">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="item">
-                                    <div class="col-xs-4 audioContent">
-                                        <iframe src="https://www.youtube.com/embed/P6vPWkKuDzQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                                        <h6>【中小企業安全衛生資訊教學】</h6>
+                                    <div class="form-group">
+                                        <label class="col-xs-4 control-label">管理者密碼</label>
+                                        <div class="col-xs-8">
+                                            <input type="password" class="form-control" placeholder="請輸入您的管理者密碼">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="item">
-                                    <div class="col-xs-4 audioContent">
-                                        <iframe src="https://www.youtube.com/embed/P6vPWkKuDzQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                                        <h6>【中小企業安全衛生資訊教學】</h6>
+                                    <div class="form-group">
+                                        <div class="col-xs-offset-2 col-xs-3">
+                                            <div class="checkbox">
+                                                <label><input type="checkbox">記住帳號</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-7">
+                                            <button type="submit" class="col-xs-5 btn btn-primary">登入</button>
+                                            <button type="reset" class="col-xs-6 col-xs-offset-1 btn btn-default">重新填寫</button>
+                                        </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
-                            <a class="slideControll" href="#videoSlide" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-                            <a class="slideControll" href="#videoSlide" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
                         </div>
-                    </div>
-                </div>
-                <!-- 相關連結 -->
-                <div class="panel-group connect">
-                    <h4>相關連結<i class="connectIcon"></i></h4>
-                    <div class="items">
-                        <ul id="connect">
-                            <li ng-repeat="(key,value) in ConnectUrl">
-                                <a href="{{value.url}}" target="_blank">
-                                    <img src="{{value.img}}" alt="">
-                                </a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
                 <div style="clear:both;"></div>

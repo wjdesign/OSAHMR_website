@@ -82,12 +82,12 @@
     	$scope.submitForgetPWD = function() {
     		alert("已寄出驗證信至您的信箱");
     		$("#forgetPWD").modal('hide');
-    	}
+    	};
 
     	$scope.checkRegister = function() {
     		if (confirm("確定送出申請嗎?")) {
     			$scope.registerStep = 3;
     		}
-    	}
+    	};
 
     });

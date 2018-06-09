@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+body {
+	background: url(../images/background.jpg)no-repeat top center;
+	font-family: "Microsoft JhengHei",Arial;
+}
+.container {
+	width: 1000px;
+}
+.position-relative {
+	position: relative;
+}
+*:focus {
+	outline: none;
+}
+
+
+/*最新消息*/
+.mainContent .rightBlock .contact {
+    padding: 10px;
+}
+.mainContent .rightBlock .contact h5 {
+    color: #545454;
+    background: url(../images/modalTitle.jpg)no-repeat 0 bottom;
+    font-size: 18px;
+    font-weight: normal;
+    padding-bottom: 12px;
+}
+.mainContent .rightBlock .contact form label {
+    padding-right: 25px;
+}
+.mainContent .rightBlock .contact .must {
+    position: relative;
+}
+.mainContent .rightBlock .contact .must:before {
+    content: '＊';
+    color: #ff0000;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 12px;
+}

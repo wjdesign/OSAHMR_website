@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+body {
+	background: url(../images/background.jpg)no-repeat top center;
+	font-family: "Microsoft JhengHei",Arial;
+}
+.container {
+	width: 1000px;
+}
+.position-relative {
+	position: relative;
+}
+*:focus {
+	outline: none;
+}
+
+
+/*管理者登入頁*/
+.mainContent .rightBlock .agent {
+    padding: 0 10px;
+}
+.mainContent .rightBlock .agent h5 {
+    color: #545454;
+    background: url(../images/modalTitle.jpg)no-repeat 0 bottom;
+    font-size: 18px;
+    font-weight: normal;
+    padding: 12px 0;
+}
+.mainContent .rightBlock .agent h5 i {
+    font-size: 16px;
+    margin:0 5px;
+}
+.mainContent .rightBlock .agent .agentBar {
+    padding: 60px 30px;
+    margin-top: 20px;
+    background: #eee;
+    border-radius: 30px;
+    border-bottom: 5px solid #b9b7b7;
+}
+.mainContent .rightBlock .agent .agentBar .agentBarIcon {
+    position: relative;
+}
+.mainContent .rightBlock .agent .agentBar .agentBarIcon i {
+    background: url(../images/agent.png) no-repeat center center;
+    content: '';
+    width: 248px;
+    height: 214px;
+    position: absolute;
+    top: -47px;
+    right: -30px;
+}

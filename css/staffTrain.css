@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+body {
+	background: url(../images/background.jpg)no-repeat top center;
+	font-family: "Microsoft JhengHei",Arial;
+}
+.container {
+	width: 1000px;
+}
+.position-relative {
+	position: relative;
+}
+*:focus {
+	outline: none;
+}
+
+
+/*員工教育訓練*/
+.mainContent .rightBlock .staffTrain {
+}
+.mainContent .rightBlock .staffTrain h5 {
+    color: #545454;
+    background: url(../images/modalTitle.jpg)no-repeat 0 bottom;
+    font-size: 18px;
+    font-weight: normal;
+    padding: 12px 0;
+}
+.mainContent .rightBlock .staffTrain h5 i {
+    font-size: 16px;
+    margin:0 5px;
+}
+/*table*/
+.staffTrain .listViewTable tr th {
+    background: #990000;
+}
+.staffTrain .listViewTable tr {
+    background: #fff;
+}
+.staffTrain .listViewTable tr:nth-child(odd) {
+    background: #fffbd6;
+}
+.staffTrain .listViewTable tr:hover {
+    background: #e8dbcb;
+}

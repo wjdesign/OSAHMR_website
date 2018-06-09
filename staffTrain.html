@@ -2,18 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>職業安全衛生管理報備資訊網</title>
+    <title>人員訓練管理系統</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/searchBlock.css">
+    <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/staffTrain.css">
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/angular.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/controllers/main.js"></script>
+    <script src="js/controllers/staffTrain.js"></script>
 </head>
-<body ng-app="myApp" ng-controller="MainCtrl">
+<body ng-app="myApp" ng-controller="staffTrainCtrl">
 <div class="header">
     <div class="container">
         <div class="row">
@@ -23,12 +25,12 @@
             </div>
             <div class="menuControl">
                 <ul class="headerMenu">
-                    <li><a class="active" href=""><i class="glyphicon glyphicon-home"></i>首頁</a></li>
+                    <li><a href="./index.html"><i class="glyphicon glyphicon-home"></i>首頁</a></li>
                     <li><a href="./odnotice.html">職業災害通報管理</a></li>
                     <li class="dropdown">
-                        <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">人員訓練管理系統<span class="caret"></span></a>
+                        <a href="" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">人員訓練管理系統<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="./staffTrain.html">專業證照管理</a></li>
+                            <li class="active"><a href="#">專業證照管理</a></li>
                             <li><a href="#">證照統計管理</a></li>
                             <li><a href="#">在職訓練管理</a></li>
                             <li role="separator" class="divider"></li>
@@ -187,102 +189,61 @@
                     <marquee behavior="" direction="">{{MsgMarquee}}</marquee>
                 </div>
                 <!-- 最新消息 -->
-                <div class="panel-group news">
-                    <h4>最新消息<i class="newsIcon"></i></h4>
-                    <ul class="pagination">
-                        <li class="previous"><a href="#">上一頁</a></li>
-                        <li class="active"><a href="">1</a></li>
-                        <li><a href="">2</a></li>
-                        <li><a href="">3</a></li>
-                        <li><a href="">...</a></li>
-                        <li class="next"><a href="#">下一頁</a></li>
-                    </ul>
-                    <ul id="news" class="items">
-                        <li ng-if="$index < 6" ng-repeat="(key,value) in News" class="panel panel-default">
-                            <a data-toggle="collapse" data-parent="#news" href="#news{{key}}" class="collapsed">{{value.title}}
-                                <span>{{value.time}}</span>
-                            </a>
-                            <div id="news{{key}}" class="panel-collapse collapse">
-                                <div class="panel-body">{{value.content}}</div>
-                            </div>
-                        </li>
-                        <li class="row more"><a class="btn btn-info btn-sm" href="./news.html">更多資訊</a></li>
-                    </ul>
-                </div>
-                <!-- 公告事項 -->
-                <div class="panel-group bulletin">
-                    <h4>公告事項<i class="bulletinIcon"></i></h4>
-                    <ul class="pagination">
-                        <li class="previous"><a href="#">上一頁</a></li>
-                        <li class="active"><a href="">1</a></li>
-                        <li><a href="">2</a></li>
-                        <li><a href="">3</a></li>
-                        <li><a href="">...</a></li>
-                        <li class="next"><a href="#">下一頁</a></li>
-                    </ul>
-                    <ul id="bulletin" class="items">
-                        <li ng-repeat="(key,value) in Bulletins" class="panel panel-default">
-                            <a data-toggle="collapse" data-parent="#bulletin" href="#bulletin{{key}}" class="collapsed">{{value.title}}
-                                <span>{{value.time}}</span>
-                            </a>
-                            <div id="bulletin{{key}}" class="panel-collapse collapse">
-                                <div class="panel-body">{{value.content}}</div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <!-- 影音專區 -->
-                <div class="panel-group audio">
-                    <h4>影音專區<i class="audioIcon"></i></h4>
-                    <ul class="pagination" ng-if="false">
-                        <li class="previous"><a href="#">上一頁</a></li>
-                        <li class="active"><a href="">1</a></li>
-                        <li><a href="">2</a></li>
-                        <li><a href="">3</a></li>
-                        <li><a href="">...</a></li>
-                        <li class="next"><a href="#">下一頁</a></li>
-                    </ul>
-                    <div class="items">
-                        <div class="carousel slide" id="videoSlide">
-                            <div class="carousel-inner">
-                                <div class="item active">
-                                    <div class="col-xs-4 audioContent">
-                                        <iframe src="https://www.youtube.com/embed/P6vPWkKuDzQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                                        <h6>【中小企業安全衛生資訊教學】</h6>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="col-xs-4 audioContent">
-                                        <iframe src="https://www.youtube.com/embed/P6vPWkKuDzQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                                        <h6>【中小企業安全衛生資訊教學】</h6>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="col-xs-4 audioContent">
-                                        <iframe src="https://www.youtube.com/embed/P6vPWkKuDzQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                                        <h6>【中小企業安全衛生資訊教學】</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <a class="slideControll" href="#videoSlide" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-                            <a class="slideControll" href="#videoSlide" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+                <form class="form-inline staffTrain">
+                    <h5 class="text-left">人員訓練管理系統<i class="glyphicon glyphicon-circle-arrow-right"></i>專業證照管理</h5>
+                    <div class="searchBlock">
+                        <div class="form-group searchSelect">
+                            <label>搜尋類型：</label>
+                            <select class="form-control">
+                                <option selected>請選擇</option>
+                                <option>人員姓名</option>
+                                <option>專業身分別</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>搜尋標題：</label>
+                            <input type="text" class="form-control searchTitle" placeholder="請輸入標題關鍵字">
+                        </div>
+                        <div class="form-group">
+                            <label>搜尋內容：</label>
+                            <input type="text" class="form-control searchContent" placeholder="請輸入內容關鍵字">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-info">送出</button>
                         </div>
                     </div>
-                </div>
-                <!-- 相關連結 -->
-                <div class="panel-group connect">
-                    <h4>相關連結<i class="connectIcon"></i></h4>
-                    <div class="items">
-                        <ul id="connect">
-                            <li ng-repeat="(key,value) in ConnectUrl">
-                                <a href="{{value.url}}" target="_blank">
-                                    <img src="{{value.img}}" alt="">
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div style="clear:both;"></div>
+                    <table class="listViewTable">
+                        <tr>
+                            <th>所屬單位</th>
+                            <th>人員姓名</th>
+                            <th>專業身分別</th>
+                            <th>再訓日期</th>
+                            <th>訓練時數</th>
+                            <th>上課總數</th>
+                            <th>證書</th>
+                            <th>執行作業</th>
+                        </tr>
+                        <tr ng-repeat="(key,value) in allTrain">
+                            <td>{{value.unit}}</td>
+                            <td>{{value.name}}</td>
+                            <td>{{value.profession}}</td>
+                            <td>{{value.trainDate}}</td>
+                            <td>{{value.trainTime}}</td>
+                            <td>{{value.lessonTime}}</td>
+                            <td><a href="{{value.certificate}}">證書</a></td>
+                            <td><a href="">編輯</a><a href="">刪除</a></td>
+                        </tr>
+                    </table>
+                    <ul class="pagination">
+                        <li class="previous"><a href="#">上一頁</a></li>
+                        <li class="active"><a href="">1</a></li>
+                        <li><a href="">2</a></li>
+                        <li><a href="">3</a></li>
+                        <li><a href="">...</a></li>
+                        <li class="next"><a href="#">下一頁</a></li>
+                    </ul>
+                    <div style="clear:both;"></div>
+                </form>
             </div>
         </div>
     </div>
