@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+body {
+	background: url(../images/background.jpg)no-repeat top center;
+	font-family: "Microsoft JhengHei",Arial;
+}
+.container {
+	width: 1000px;
+}
+.position-relative {
+	position: relative;
+}
+*:focus {
+	outline: none;
+}
+
+
+/*安全衛生訓練學堂 - 安衛新知訊*/
+/*table-listViewTable*/
+.SHTrainNews .listViewTable tr th {
+    background: #ef5353;
+}
+.SHTrainNews .listViewTable tr {
+    background: #fff;
+}
+.SHTrainNews .listViewTable tr:nth-child(odd) {
+    background: #fff2ed;
+}
+.SHTrainNews .listViewTable tr:hover {
+    background: #f1caca;
+}

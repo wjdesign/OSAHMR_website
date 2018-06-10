@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+body {
+	background: url(../images/background.jpg)no-repeat top center;
+	font-family: "Microsoft JhengHei",Arial;
+}
+.container {
+	width: 1000px;
+}
+.position-relative {
+	position: relative;
+}
+*:focus {
+	outline: none;
+}
+
+
+/*安全衛生訓練學堂 - 安衛宣導教材*/
+/*table-listViewTable*/
+.SHTrainVideo .listViewTable tr th {
+    background: #45bf69;
+}
+.SHTrainVideo .listViewTable tr {
+    background: #fff;
+}
+.SHTrainVideo .listViewTable tr:nth-child(odd) {
+    background: #e4f7f1;
+}
+.SHTrainVideo .listViewTable tr:hover {
+    background: #b4d4c4;
+}

@@ -38,7 +38,6 @@ body {
 .listViewTable tr td {
 	border: 2px solid #fff;
 	color: #000;
-	text-align: left;
 	padding: 10px;
 	vertical-align: middle;
 }

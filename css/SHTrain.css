@@ -1,0 +1,102 @@
+@charset "UTF-8";
+
+body {
+	background: url(../images/background.jpg)no-repeat top center;
+	font-family: "Microsoft JhengHei",Arial;
+}
+.container {
+	width: 1000px;
+}
+.position-relative {
+	position: relative;
+}
+*:focus {
+	outline: none;
+}
+
+
+/*最新消息*/
+.mainContent .rightBlock .SHTrain {
+    padding: 10px;
+}
+.mainContent .rightBlock .SHTrain h5 {
+    color: #545454;
+    background: url(../images/modalTitle.jpg)no-repeat 0 bottom;
+    font-size: 18px;
+    font-weight: normal;
+    padding-bottom: 12px;
+}
+.mainContent .rightBlock .SHTrain h5 i {
+    font-size: 16px;
+    margin:0 5px;
+}
+.mainContent .rightBlock .SHTrain {
+    padding:0;
+}
+.SHTrain .searchBlock .form-group .searchContent {
+    width: 595px;
+}
+.SHTrain .items a p {
+    font-size: 12px;
+    text-align: center;
+}
+.SHTrain .items a {
+    width: 220px;
+    height: 86px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    padding: 24px 0 0 95px;
+    font-size: 16px;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    transition: .3s;
+    transform:scale(.9);
+}
+.SHTrain .items a:hover {
+    transform:scale(1);
+}
+.SHTrain .items a.news {
+    background: url(../images/SHTrain/news.png)no-repeat 0 0;
+    background-size: cover;
+}
+.SHTrain .items a.news:hover {
+    color: #e30029;
+}
+.SHTrain .items a.propaganda {
+    background: url(../images/SHTrain/propaganda.png)no-repeat 0 0;
+    background-size: cover;
+}
+.SHTrain .items a.propaganda:hover {
+    color: #00ade9;
+}
+.SHTrain .items a.slogan {
+    background: url(../images/SHTrain/slogan.png)no-repeat 0 0;
+    background-size: cover;
+}
+.SHTrain .items a.slogan:hover {
+    color: #d29a00;
+}
+.SHTrain .items a.textbook {
+    background: url(../images/SHTrain/textbook.png)no-repeat 0 0;
+    background-size: cover;
+}
+.SHTrain .items a.textbook:hover {
+    color: #ff891a;
+}
+.SHTrain .items a.video {
+    background: url(../images/SHTrain/video.png)no-repeat 0 0;
+    background-size: cover;
+}
+.SHTrain .items a.video:hover {
+    color: #03ad9a;
+}
+/*listViewTable*/
+.SHTrain .listViewTable tr td i {
+    color: #41aef5;
+    margin-right: 5px;
+}
+.SHTrain .listViewTable tr td a {
+    color: #616161;
+}

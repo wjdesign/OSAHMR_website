@@ -49,6 +49,12 @@ body {
 	border-radius: 50em;
 	color: #fff;
 }
+.header .menuControl .headerMenu > li.dropdown .dropdown-menu {
+    margin-top: 0;
+}
+.header .menuControl .headerMenu > li.dropdown:hover .dropdown-menu {
+    display: block;
+}
 .header .menuControl .headerMenu:after {
     content: '';
     display: block;
@@ -430,7 +436,7 @@ body {
     bottom: 0;
 }
 .mainContent .rightBlock .pagination {
-    margin: 5px 0 0 0;
+    margin: 5px 0;
     float: right;
 }
 .mainContent .rightBlock .pagination li a {

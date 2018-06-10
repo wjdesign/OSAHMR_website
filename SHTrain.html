@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>人員訓練管理系統</title>
+    <title>安全衛生訓練學堂</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/searchBlock.css">
     <link rel="stylesheet" href="css/table.css">
-    <link rel="stylesheet" href="css/staffTrain.css">
+    <link rel="stylesheet" href="css/SHTrain.css">
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/angular.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/controllers/staffTrain.js"></script>
+    <script src="js/controllers/SHTrain.js"></script>
 </head>
-<body ng-app="myApp" ng-controller="staffTrainCtrl">
+<body ng-app="myApp" ng-controller="SHTrainCtrl">
 <div class="header">
     <div class="container">
         <div class="row">
@@ -26,17 +26,17 @@
             <div class="menuControl">
                 <ul class="headerMenu">
                     <li><a href="./index.html"><i class="glyphicon glyphicon-home"></i>首頁</a></li>
-                    <li><a href="./odnotice.html">職業災害通報管理</a></li>
+                    <li><a href="./odnotice.html" ng-click="OdnoticeView = 1">職業災害通報管理</a></li>
                     <li class="dropdown">
-                        <a href="" class="dropdown-toggle active">人員訓練管理系統<span class="caret"></span></a>
+                        <a href="" class="dropdown-toggle">人員訓練管理系統<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li class="active"><a href="./staffTrain.html">專業證照管理</a></li>
+                            <li><a href="./staffTrain.html">專業證照管理</a></li>
                             <li><a href="./licenseCount.html">證照統計管理</a></li>
                             <li><a href="./onJobTrain.html">在職訓練管理</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="./SHTrain.html" class="dropdown-toggle">安全衛生訓練學堂<span class="caret"></span></a>
+                        <a class="active" href="./SHTrain.html" class="dropdown-toggle">安全衛生訓練學堂<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="./SHTrainNews.html">安衛新知訊</a></li>
                             <li><a href="./SHTrainPropaganda.html">安衛宣導品</a></li>
@@ -195,164 +195,20 @@
                     <span>公告</span>
                     <marquee behavior="" direction="">{{MsgMarquee}}</marquee>
                 </div>
-                <!-- 專業證照管理 - 編輯 -->
-                <form class="form-inline staffTrain text-center">
-                    <h5 class="text-left">人員訓練管理系統<i class="glyphicon glyphicon-circle-arrow-right"></i>專業證照管理<i class="glyphicon glyphicon-circle-arrow-right"></i>編輯</h5>
-                    <table class="dataSheet">
-                        <tr>
-                            <td colspan="4" class="text-left tableTitleLarge">■ 單位人員相關資訊 ■</td>
-                        </tr>
-                        <tr>
-                            <td class="tableTitle">所屬單位：</td>
-                            <td colspan="3">
-                                <select class="longInput">
-                                    <option>請選擇</option>
-                                    <option>中西區清潔隊</option>
-                                    <option>北區清潔隊</option>
-                                    <option>東南區清潔隊</option>
-                                    <option>南屯區清潔隊</option>
-                                    <option>北屯區清潔隊</option>
-                                    <option>機動區清潔隊</option>
-                                    <option>西屯區清潔隊</option>
-                                    <option>豐原區清潔隊</option>
-                                    <option>后里區清潔隊</option>
-                                    <option>潭子區清潔隊</option>
-                                    <option>大雅區清潔隊</option>
-                                    <option>神岡區清潔隊</option>
-                                    <option>大里區清潔隊</option>
-                                    <option>霧峰區清潔隊</option>
-                                    <option>太平區清潔隊</option>
-                                    <option>烏日區清潔隊</option>
-                                    <option>沙鹿區清潔隊</option>
-                                    <option>清水區清潔隊</option>
-                                    <option>梧棲區清潔隊</option>
-                                    <option>龍井區清潔隊</option>
-                                    <option>大甲區清潔隊</option>
-                                    <option>外埔區清潔隊</option>
-                                    <option>大安區清潔隊</option>
-                                    <option>東勢區清潔隊</option>
-                                    <option>石岡區清潔隊</option>
-                                    <option>新社區清潔隊</option>
-                                    <option>和平區清潔隊</option>
-                                    <option>大肚區清潔隊</option>
-                                    <option>環境設施大隊</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="tableTitle">人員姓名：</td>
-                            <td><input type="text" style="width: 100%;" value="張芳綺"></td>
-                            <td class="tableTitle">E-Mail信箱：</td>
-                            <td><input type="text" style="width: 100%;"></td>
-                        </tr>
-                        <tr>
-                            <td class="tableTitle">電話：</td>
-                            <td><input type="text" style="width: 100%;"></td>
-                            <td class="tableTitle">分機：</td>
-                            <td><input type="text" style="width: 100%;"></td>
-                        </tr>
-                        <tr>
-                            <td class="tableTitle">行動電話：</td>
-                            <td colspan="3"><input type="text" style="width: 100%;"></td>
-                        </tr>
-                        <tr>
-                            <td colspan="4" class="text-left tableTitleLarge">■ 證照資格相關資訊 ■</td>
-                        </tr>
-                        <tr>
-                            <td class="tableTitle">專業身分別：</td>
-                            <td colspan="3" class="text-left">
-                                <select>
-                                    <option>請選擇</option>
-                                    <option>勞工安全衛生業務主管</option>
-                                    <option>勞工安全衛生管理人員</option>
-                                    <option>勞工健康服務護理人員</option>
-                                    <option>勞工作業環境測定人員</option>
-                                    <option>施工安全評估人員及製程安全評估人員</option>
-                                    <option>高壓氣體作業主管、營造作業主管及有害作業主管</option>
-                                    <option>具有危險性之機械或設備操作人員(抓斗車)</option>
-                                    <option>特殊作業人員(堆高機)</option>
-                                    <option>急救人員</option>
-                                    <option>各級管理、指揮、監督之業務主管</option>
-                                    <option>勞工安全衛生委員會成員</option>
-                                    <option>營造作業</option>
-                                    <option>車輛系營建機械作業</option>
-                                    <option>高空工作車作業</option>
-                                    <option>缺氧作業</option>
-                                    <option>局限空間作業及製造</option>
-                                    <option>處置或使用危險物</option>
-                                    <option>有害物作業之人員</option>
-                                    <option>一般勞工</option>
-                                </select>
-                                <span class="text-primary">【 再訓起始日：<input type="date"> 】</span>
-                                <p class="checkboxBlock"><input type="checkbox" id="inJobs"><label for="inJobs">擔任本職務</label></p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="tableTitle">證照類別：</td>
-                            <td colspan="3">
-                                <select class="longInput">
-                                    <option>請選擇</option>
-                                    <option>工業安全技師</option>
-                                    <option>工礦衛生技師</option>
-                                    <option>勞工安全管理師</option>
-                                    <option>勞工衛生管理師</option>
-                                    <option>勞工安全衛生管理員</option>
-                                    <option>勞工安全衛生業務主管 (甲種)</option>
-                                    <option>勞工安全衛生業務主管 (乙種)</option>
-                                    <option>勞工安全衛生業務主管 (丙種)</option>
-                                    <option>甲級化學性因子作業環境測定人員</option>
-                                    <option>甲級物理性因子作業環境測定人員</option>
-                                    <option>乙級化學性因子作業環境測定人員</option>
-                                    <option>乙級物理性因子作業環境測定人員</option>
-                                    <option>施工安全評估人員</option>
-                                    <option>製程安全評估人員</option>
-                                    <option>高壓氣體作業主管</option>
-                                    <option>營造作業主管</option>
-                                    <option>有害作業主管</option>
-                                    <option>危險性機械操作人員</option>
-                                    <option>危險性設備操作人員</option>
-                                    <option>特殊作業人員 (如小型鍋爐操作人員、荷重在一公噸以上之堆高機操作人員等)</option>
-                                    <option>勞工健康服務護理人員</option>
-                                    <option>急救人員</option>
-                                    <option>其他</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="tableTitle">證照名稱：</td>
-                            <td colspan="3" class="text-left">
-                                <span id="licenseName" style="margin-right: 10px;">急救人員-張芳綺.pdf</span>
-                                <a class="btn btn-danger btn-xs">刪除</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="tableTitle">證照上傳：</td>
-                            <td colspan="3">
-                                <input type="file" class="longInput">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="tableTitle">訓練頻率：</td>
-                            <td colspan="3" class="text-left"><span id="trainRate">急救人員(每3年至少3小時)</span><span class="trainTimeOut">【再訓截止日：2019/08/19】</span></td>
-                        </tr>
-                        <tr>
-                            <td class="tableTitle">備註：</td>
-                            <td colspan="3">
-                                <input type="text" class="longInput">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="4" class="text-left tableTitleLarge">■ 在職訓練相關資訊 ■</td>
-                        </tr>
-                        <tr>
-                            <td colspan="4" class="text-left">
-                                <span style="margin-right: 10px;">目前沒有明細資料</span><a class="btn btn-warning btn-xs">新增明細資料</a>
-                            </td>
-                        </tr>
-                    </table>
-                    <button type="submit" class="btn btn-primary">送出</button>
-                    <a href="./staffTrain.html" class="btn btn-default">取消</a>
-                </form>
+                <!-- 處理流程說明 -->
+                <div class="panel-group SHTrain text-center">
+                    <h5 class="text-left">安全衛生訓練學堂</h5>
+                    <div class="items">
+                        <p class="text-left">提供各項職業安全衛生訓練資料、訊息交流提供使用者下載、查看及查詢安全衛生訓練資訊，連結職安官方網站，彙整最新安全衛生資訊，前開資料內容原則由機關提供。</p>
+                    </div>
+                    <div class="items text-left">
+                        <a href="./SHTrainNews.html" class="news">安衛新知訊<p>NEWS</p></a>
+                        <a href="./SHTrainPropaganda.html" class="propaganda">安衛宣導品<p>PROPAGANDA</p></a>
+                        <a href="./SHTrainSlogan.html" class="slogan">安衛標語與標示<p>SLOGAN</p></a>
+                        <a href="./SHTrainTextBook.html" class="textbook">安衛宣導教材<p>TEXTBOOK</p></a>
+                        <a href="./SHTrainVideo.html" class="video">安衛宣導影片<p>VIDEO</p></a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
