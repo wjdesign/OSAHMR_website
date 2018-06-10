@@ -515,106 +515,127 @@ app.controller('SHTrainCtrl', function ($scope, $http) {
     $scope.SHTrainVideos = [
         {
             'title':'一般安全衛生教育訓練 e-learning 教材',
+            'onlineURL':'#',
             'downloadURL':'#',
             'date':'2018/04/16',
             'author':'財團法人安全衛生技術中心'
         },{
             'title':'缺氧中毒危害_局限空間作業',
+            'onlineURL':'#',
             'downloadURL':'#',
             'date':'2017/07/20',
             'author':'新北市政府勞工局勞動檢查處'
         },{
             'title':'缺氧中毒危害_電鍍槽清理作業災害預防宣導',
+            'onlineURL':'#',
             'downloadURL':'#',
             'date':'2017/07/20',
             'author':'勞動部職業安全衛生署'
         },{
             'title':'墜落飛落危害_屋頂作業安全-案例篇',
+            'onlineURL':'#',
             'downloadURL':'#',
             'date':'2017/07/20',
             'author':'新北市政府勞工局勞動檢查處'
         },{
             'title':'火災爆炸危害_防爆電器安全',
+            'onlineURL':'#',
             'downloadURL':'#',
             'date':'2017/07/20',
             'author':'新北市政府勞工局勞動檢查處'
         },{
             'title':'人因過勞_職場過勞預防之推動策略與實務',
+            'onlineURL':'#',
             'downloadURL':'#',
             'date':'2017/07/20',
             'author':'新北市政府勞工局勞動檢查處'
         },{
             'title':'人因過勞_人因性危害預防',
+            'onlineURL':'#',
             'downloadURL':'#',
             'date':'2017/07/20',
             'author':'新北市政府勞工局勞動檢查處'
         },{
             'title':'其他_堆高機作業安全',
+            'onlineURL':'#',
             'downloadURL':'#',
             'date':'2017/07/20',
             'author':'新北市政府勞工局勞動檢查處'
         },{
             'title':'其他_危險性機械安全檢查管理',
+            'onlineURL':'#',
             'downloadURL':'#',
             'date':'2017/07/20',
             'author':'新北市政府勞工局勞動檢查處'
         },{
             'title':'墜落飛落危害_死神任務之救命一繫',
+            'onlineURL':'#',
             'downloadURL':'#',
             'date':'2017/07/20',
             'author':'新北市政府勞工局勞動檢查處'
         },{
             'title':'墜落飛落危害_使用高危險性機械從事高空作業安全',
+            'onlineURL':'#',
             'downloadURL':'#',
             'date':'2017/07/20',
             'author':'新北市政府勞工局勞動檢查處'
         },{
             'title':'感電危害_冷氣裝修安全作業宣導影片',
+            'onlineURL':'#',
             'downloadURL':'#',
             'date':'2017/07/20',
             'author':'新北市政府勞工局勞動檢查處'
         },{
             'title':'墜落飛落危害_superbee工安宣導短片01-屋頂作業',
+            'onlineURL':'#',
             'downloadURL':'#',
             'date':'2017/07/20',
             'author':'新北市政府勞工局勞動檢查處'
         },{
             'title':'墜落飛落危害_superbee工安宣導短片02-施工架',
+            'onlineURL':'#',
             'downloadURL':'#',
             'date':'2017/07/20',
             'author':'新北市政府勞工局勞動檢查處'
         },{
             'title':'缺氧中毒危害_superbee工安宣導短片03-危險氣體',
+            'onlineURL':'#',
             'downloadURL':'#',
             'date':'2017/07/20',
             'author':'新北市政府勞工局勞動檢查處'
         },{
             'title':'切割夾捲危害_職場常見危害-輸送帶',
+            'onlineURL':'#',
             'downloadURL':'#',
             'date':'2017/07/20',
             'author':'新北市政府勞工局勞動檢查處'
         },{
             'title':'墜落飛落危害_職場常見危害-屋頂作業',
+            'onlineURL':'#',
             'downloadURL':'#',
             'date':'2017/07/20',
             'author':'新北市政府勞工局勞動檢查處'
         },{
             'title':'墜落飛落危害_職場常見危害-合梯作業',
+            'onlineURL':'#',
             'downloadURL':'#',
             'date':'2017/07/20',
             'author':'新北市政府勞工局勞動檢查處'
         },{
             'title':'墜落飛落危害_職場常見危害-平台作業',
+            'onlineURL':'#',
             'downloadURL':'#',
             'date':'2017/07/20',
             'author':'新北市政府勞工局勞動檢查處'
         },{
             'title':'切割夾捲危害_職場常見危害-CNC車床',
+            'onlineURL':'#',
             'downloadURL':'#',
             'date':'2017/07/20',
             'author':'新北市政府勞工局勞動檢查處'
         },{
             'title':'死神任務3 天降危機',
+            'onlineURL':'#',
             'downloadURL':'#',
             'date':'2017/07/20',
             'author':'新北市政府勞工局勞動檢查處'

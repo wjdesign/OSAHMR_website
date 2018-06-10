@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+body {
+	background: url(../images/background.jpg)no-repeat top center;
+	font-family: "Microsoft JhengHei",Arial;
+}
+.container {
+	width: 1000px;
+}
+.position-relative {
+	position: relative;
+}
+*:focus {
+	outline: none;
+}
+
+
+/*安衛管理小幫手 - 進入系統*/
+/*table - dataSheet*/
+.mainContent .rightBlock .SHHelperInner .dataSheet {
+    font-size: 14px;
+}
+.mainContent .rightBlock .SHHelperInner .dataSheet tr .tableTitle {
+    width: 20%;
+}
+.mainContent .rightBlock .SHHelperInner .dataSheet tr input[ type = "radio" ] {
+    margin-left: 10px;
+}
+.mainContent .rightBlock .SHHelperInner .dataSheet tr input[ type = "checkbox" ] {
+    margin-right: 5px;
+    margin-left: 10px;
+}
+.mainContent .rightBlock .SHHelperInner .dataSheet tr label {
+    margin-right: 20px;
+    margin-bottom: 0;
+}
+.mainContent .rightBlock .SHHelperInner .dataSheet tr p {
+    margin: 0 10px;
+}
+.mainContent .rightBlock .SHHelperInner .dataSheet tr hr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

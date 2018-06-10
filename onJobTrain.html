@@ -45,7 +45,13 @@
                             <li><a href="./SHTrainVideo.html">安衛宣導影片</a></li>
                         </ul>
                     </li>
-                    <li><a href="">安衛管理小幫手</a></li>
+                    <li class="dropdown">
+                        <a href="./SHHelper.html" class="dropdown-toggle">安衛管理小幫手<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./SHHelper.html">使用說明</a></li>
+                            <li><a href="./SHHelperInner.html">進入系統</a></li>
+                        </ul>
+                    </li>
                     <li><a href="">活動報名專區</a></li>
                     <li><a href="">安全衛生護具管理</a></li>
                 </ul>
@@ -225,8 +231,8 @@
                             <th>人員姓名</th>
                             <th>專業身分別</th>
                             <th>再訓日期</th>
-                            <th>訓練時數</th>
-                            <th>上課總數</th>
+                            <th>訓練<br/>時數</th>
+                            <th>上課<br/>總數</th>
                             <th>證書</th>
                             <th>執行作業</th>
                         </tr>
@@ -238,7 +244,7 @@
                             <td>{{value.trainTime}}</td>
                             <td>{{value.lessonTime}}</td>
                             <td><a href="{{value.certificate}}">證書</a></td>
-                            <td><a href="{{url}}">編輯</a><a href="">刪除</a></td>
+                            <td><a href="{{url}}">編輯</a><a href="">匯入</a><a href="">刪除</a></td>
                         </tr>
                     </table>
                     <ul class="pagination">

@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+body {
+	background: url(../images/background.jpg)no-repeat top center;
+	font-family: "Microsoft JhengHei",Arial;
+}
+.container {
+	width: 1000px;
+}
+.position-relative {
+	position: relative;
+}
+*:focus {
+	outline: none;
+}
+
+
+/*安衛管理小幫手*/
+.mainContent .rightBlock .SHHelper {
+    padding: 10px;
+}
+.mainContent .rightBlock .SHHelper h5 {
+    color: #545454;
+    background: url(../images/modalTitle.jpg)no-repeat 0 bottom;
+    font-size: 18px;
+    font-weight: normal;
+    padding-bottom: 12px;
+}
+.mainContent .rightBlock .SHHelper h5 i {
+    font-size: 16px;
+    margin:0 5px;
+}
+.mainContent .rightBlock .SHHelper .items p {
+    line-height: 24px;
+}
+.SHHelper .searchBlock .form-group .searchContent {
+    width: 595px;
+}

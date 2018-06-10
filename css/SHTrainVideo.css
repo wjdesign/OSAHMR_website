@@ -29,3 +29,14 @@ body {
 .SHTrainVideo .listViewTable tr:hover {
     background: #b4d4c4;
 }
+/*listViewTable - 展開的icon效果*/
+.SHTrain .listViewTable tr td a i:before {
+	color: #ff7389;
+}
+.SHTrain .listViewTable tr td a.collapsed i:before {
+	content: "\e158";
+	color: #41aef5;
+}
+.SHTrain .listViewTable tr td a.downloadVideo i:before {
+	color: #41aef5;
+}

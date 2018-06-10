@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>安全衛生訓練學堂</title>
+    <title>安衛管理小幫手</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/searchBlock.css">
     <link rel="stylesheet" href="css/table.css">
-    <link rel="stylesheet" href="css/SHTrain.css">
+    <link rel="stylesheet" href="css/SHHelper.css">
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/angular.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/controllers/SHTrain.js"></script>
+    <script src="js/controllers/SHHelper.js"></script>
 </head>
-<body ng-app="myApp" ng-controller="SHTrainCtrl">
+<body ng-app="myApp" ng-controller="SHHelperCtrl">
 <div class="header">
     <div class="container">
         <div class="row">
@@ -36,7 +36,7 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a class="active" href="./SHTrain.html" class="dropdown-toggle">安全衛生訓練學堂<span class="caret"></span></a>
+                        <a href="./SHTrain.html" class="dropdown-toggle">安全衛生訓練學堂<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="./SHTrainNews.html">安衛新知訊</a></li>
                             <li><a href="./SHTrainPropaganda.html">安衛宣導品</a></li>
@@ -46,9 +46,9 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="./SHHelper.html" class="dropdown-toggle">安衛管理小幫手<span class="caret"></span></a>
+                        <a class="active" href="./SHHelper.html" class="dropdown-toggle">安衛管理小幫手<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="./SHHelper.html">使用說明</a></li>
+                            <li class="active"><a href="./SHHelper.html">使用說明</a></li>
                             <li><a href="./SHHelperInner.html">進入系統</a></li>
                         </ul>
                     </li>
@@ -201,18 +201,18 @@
                     <span>公告</span>
                     <marquee behavior="" direction="">{{MsgMarquee}}</marquee>
                 </div>
-                <!-- 處理流程說明 -->
-                <div class="panel-group SHTrain text-center">
-                    <h5 class="text-left">安全衛生訓練學堂</h5>
-                    <div class="items">
-                        <p class="text-left">提供各項職業安全衛生訓練資料、訊息交流提供使用者下載、查看及查詢安全衛生訓練資訊，連結職安官方網站，彙整最新安全衛生資訊，前開資料內容原則由機關提供。</p>
+                <!-- 安衛管理小幫手 -->
+                <div class="panel-group SHHelper text-center">
+                    <h5 class="text-left">前言</h5>
+                    <div class="items" style="margin-bottom: 50px;">
+                        <p class="text-left">中小企業對台灣經濟發展與社會安定貢獻良多，惟其因財力、物力、專業人才、資金等較為短缺，廠場安全衛生訊息貧乏，致職業災害率較平均值高五成以上；為此，特別設計安衛小幫手，透過簡易的點選方式，即可快速從系統產出廠內應符合法規的安全衛生事宜，協助中小企業的安衛人員了解安全衛生，並確實明白應執行的安全衛生事項及方法，提昇勞工安衛知識與技能，期能強化工作安全與促進工安意識的推廣和普及，詳細內容請看使用說明。</p>
                     </div>
-                    <div class="items text-left">
-                        <a href="./SHTrainNews.html" class="news">安衛新知訊<p>NEWS</p></a>
-                        <a href="./SHTrainPropaganda.html" class="propaganda">安衛宣導品<p>PROPAGANDA</p></a>
-                        <a href="./SHTrainSlogan.html" class="slogan">安衛標語與標示<p>SLOGAN</p></a>
-                        <a href="./SHTrainTextBook.html" class="textbook">安衛宣導教材<p>TEXTBOOK</p></a>
-                        <a href="./SHTrainVideo.html" class="video">安衛宣導影片<p>VIDEO</p></a>
+                    <h5 class="text-left">使用說明</h5>
+                    <div class="items">
+                        <p class="text-left">中小企業對台灣經濟發展與社會安定貢獻良多，惟其因財力、物力、專業人才、資金等較為短缺，廠場安全衛生訊息貧乏，致職業災害率較平均值高五成以上；為此，特別設計安衛小幫手，透過簡易的點選方式，即可快速從系統產出廠內應符合法規的安全衛生事宜，協助中小企業的安衛人員了解安全衛生，並確實明白應執行的安全衛生事項及方法，提昇勞工安衛知識與技能，期能強化工作安全與促進工安意識的推廣和普及，詳細內容請看使用說明。</p>
+                    </div>
+                    <div class="items">
+                        <a href="./SHHelperInner.html" class="btn btn-primary">進入系統</a>
                     </div>
                 </div>
             </div>
