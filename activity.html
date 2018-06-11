@@ -2,21 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>安全衛生訓練學堂</title>
+    <title>活動報名專區</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/searchBlock.css">
     <link rel="stylesheet" href="css/table.css">
     <link rel="stylesheet" href="css/SHTrain.css">
-    <link rel="stylesheet" href="css/SHTrainSlogan.css">
+    <link rel="stylesheet" href="css/activity.css">
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/angular.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/controllers/SHTrain.js"></script>
+    <script src="js/controllers/activity.js"></script>
 </head>
-<body ng-app="myApp" ng-controller="SHTrainCtrl">
+<body ng-app="myApp" ng-controller="ActivityCtrl">
 <div class="header">
     <div class="container">
         <div class="row">
@@ -37,11 +37,11 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a class="active" href="./SHTrain.html" class="dropdown-toggle">安全衛生訓練學堂<span class="caret"></span></a>
+                        <a href="./SHTrain.html" class="dropdown-toggle">安全衛生訓練學堂<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="./SHTrainNews.html">安衛新知訊</a></li>
                             <li><a href="./SHTrainPropaganda.html">安衛宣導品</a></li>
-                            <li class="active"><a href="./SHTrainSlogan.html">安衛標語與標示</a></li>
+                            <li><a href="./SHTrainSlogan.html">安衛標語與標示</a></li>
                             <li><a href="./SHTrainTextBook.html">安衛宣導教材</a></li>
                             <li><a href="./SHTrainVideo.html">安衛宣導影片</a></li>
                         </ul>
@@ -53,7 +53,7 @@
                             <li><a href="./SHHelperInner.html">進入系統</a></li>
                         </ul>
                     </li>
-                    <li><a href="./activity.html">活動報名專區</a></li>
+                    <li><a class="active" href="./activity.html">活動報名專區</a></li>
                     <li><a href="">安全衛生護具管理</a></li>
                 </ul>
             </div>
@@ -203,8 +203,8 @@
                     <marquee behavior="" direction="">{{MsgMarquee}}</marquee>
                 </div>
                 <!-- 最新消息 -->
-                <form class="form-inline SHTrain SHTrainSlogan">
-                    <h5 class="text-left">安全衛生訓練學堂<i class="glyphicon glyphicon-circle-arrow-right"></i>安衛標語與標示</h5>
+                <form class="form-inline activity">
+                    <h5 class="text-left">活動報名專區</h5>
                     <div class="items">
                         <p class="text-left">使用聲明 本資料庫之資料由勞動部職業安全衛生署委託製作，係僅供參考，使用者需自行判斷其實際可用性，以及相關法規、不同對象、與場合之特殊要求應用。</p>
                     </div>
@@ -227,14 +227,55 @@
                     </div>
                     <table class="listViewTable">
                         <tr>
-                            <th>標題</th>
+                            <th class="tableTHTitle">活動名稱</th>
                             <th>日期</th>
-                            <th>發布單位</th>
+                            <th>主辦單位</th>
+                            <th>線上<br/>報名</th>
                         </tr>
-                        <tr ng-repeat="(key,value) in SHTrainSlogans">
-                            <td><i class="glyphicon glyphicon-expand"></i><a ng-click="checkDownload();" target="_blank">{{value.title}}</a></td>
-                            <td class="text-center">{{value.date}}</td>
+                        <tr ng-repeat="(key,value) in Activitys">
+                            <td>
+                                <a data-toggle="collapse" data-parent="#videos" href="#videos{{key}}" class="collapsed"><i class="glyphicon glyphicon-collapse-down"></i>{{value.title}}</a>
+                                <div id="videos{{key}}" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <img class="img-responsive" src="./images/activity/{{value.activityImg}}" alt="">
+                                        <table class="dataSheet">
+                                            <tr>
+                                                <td class="tableTitle">活動<br/>名稱</td>
+                                                <td>{{value.title}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tableTitle">目的</td>
+                                                <td>{{value.purpose}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tableTitle">日期</td>
+                                                <td>{{value.startDate}}<span ng-if="(value.endDate)"> ～ {{value.endDate}}</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tableTitle">報名<br/>時間</td>
+                                                <td>{{value.openTime}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tableTitle">截止<br/>時間</td>
+                                                <td>{{value.closeTime}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tableTitle">地點</td>
+                                                <td>{{value.location}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tableTitle">活動<br/>概要</td>
+                                                <td class="text-left">{{value.content}}</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-center">{{value.startDate}} <span ng-if="(value.endDate)"><br/>至<br/>{{value.endDate}}</span></td>
                             <td class="text-center">{{value.author}}</td>
+                            <td class="text-center">
+                                <a class="downloadVideo" href="{{value.URL}}" target="_blank"><i class="glyphicon glyphicon-send"></i></a>
+                            </td>
                         </tr>
                     </table>
                     <ul class="pagination">

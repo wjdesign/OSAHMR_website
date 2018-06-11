@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+body {
+	background: url(../images/background.jpg)no-repeat top center;
+	font-family: "Microsoft JhengHei",Arial;
+}
+.container {
+	width: 1000px;
+}
+.position-relative {
+	position: relative;
+}
+*:focus {
+	outline: none;
+}
+
+
+/*活動報名專區*/
+.mainContent .rightBlock .activity {
+	padding: 10px;
+}
+.mainContent .rightBlock .activity h5 {
+	color: #545454;
+	background: url(../images/modalTitle.jpg)no-repeat 0 bottom;
+	font-size: 18px;
+	font-weight: normal;
+	padding-bottom: 12px;
+}
+.mainContent .rightBlock .activity h5 i {
+	font-size: 16px;
+	margin:0 5px;
+}
+/*searchBar*/
+.activity .searchBlock .form-group .searchContent {
+	width: 575px;
+}
+/*table-listViewTable*/
+.activity .listViewTable tr th {
+    background: #41ce98;
+}
+.activity .listViewTable tr .tableTHTitle {
+	width: 60%;
+}
+.activity .listViewTable tr {
+    background: #eee;
+}
+.activity .listViewTable tr:nth-child(odd) {
+    background: #f9f9f9;
+}
+.activity .listViewTable tr:hover {
+    background: #e2eae6;
+}
+.activity .listViewTable tr td.tableTitle {
+	text-align: center;
+}
+/*listViewTable - 展開的icon效果*/
+.activity .listViewTable tr td a i:before {
+	color: #ff7389;
+}
+.activity .listViewTable tr td a.collapsed i:before {
+	content: "\e158";
+	color: #41aef5;
+}
+.activity .listViewTable tr td a.downloadVideo i:before {
+	color: #41aef5;
+}
+/*panel*/
+.activity .panel-collapse .panel-body {
+	padding: 15px 0 0;
+}
+/*table-dataSheet*/
+.activity .dataSheet {
+	border:1px solid #fff;
+	margin-bottom: 0;
+}
+.activity .dataSheet tr {
+	background: #fff;
+}
+.activity .dataSheet tr:hover {
+	background: #e1ffe0;
+}
+.activity .dataSheet tr td.tableTitle {
+	background: #76a292;
+	color: #fff;
+}
+.activity .dataSheet tr td {
+	border:1px solid #fff;
+}
