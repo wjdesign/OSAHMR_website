@@ -7,6 +7,10 @@
 
     app.controller('MainCtrl', function ($scope, $http) {
 
+    	// 版本號
+    	$scope.version = "?20180601";
+
+    	// 登入判斷
     	$scope.authcheck = false;
 
         // 取得用戶IP

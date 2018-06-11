@@ -21,8 +21,8 @@
     <div class="container">
         <div class="row">
             <div class="title">
-                <img class="logo" src="images/logo.png" alt="">
-                <img class="logo" src="images/title.png" alt="">
+                <img class="logo" src="images/logo.png{{version}}" alt="">
+                <img class="logo" src="images/title.png{{version}}" alt="">
             </div>
             <div class="menuControl">
                 <ul class="headerMenu">
@@ -298,7 +298,7 @@
                         <ul id="connect">
                             <li ng-repeat="(key,value) in ConnectUrl">
                                 <a href="{{value.url}}" target="_blank">
-                                    <img src="{{value.img}}" alt="">
+                                    <img src="{{value.img}}{{version}}" alt="">
                                 </a>
                             </li>
                         </ul>
