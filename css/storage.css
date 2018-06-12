@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+body {
+	background: url(../images/background.jpg)no-repeat top center;
+	font-family: "Microsoft JhengHei",Arial;
+}
+.container {
+	width: 1000px;
+}
+.position-relative {
+	position: relative;
+}
+*:focus {
+	outline: none;
+}
+
+
+/*最新消息*/
+.mainContent .rightBlock .storage {
+    padding: 10px;
+}
+.mainContent .rightBlock .storage h5 {
+    color: #545454;
+    background: url(../images/modalTitle.jpg)no-repeat 0 bottom;
+    font-size: 18px;
+    font-weight: normal;
+    padding-bottom: 12px;
+}
+.mainContent .rightBlock .storage h5 i {
+    font-size: 16px;
+    margin:0 5px;
+}
+/*searchBar*/
+.storage .searchBlock .form-group label {
+    margin: 0 10px 5px;
+}
+.storage .searchBlock .form-group.searchSelect select {
+    width: 143px;
+}
+.storage .searchBlock .form-group .searchContent {
+    width: 558px;
+}
+/*table-listViewTable*/
+.storage .listViewTable tr th {
+    background: #4c4ca5;
+}
+.storage .listViewTable tr {
+    background: #fff;
+}
+.storage .listViewTable tr:nth-child(odd) {
+    background: #e1e2ef;
+}
+.storage .listViewTable tr:hover {
+    background: #bac4f1;
+}
+.storage .listViewTable tr td i {
+    color: #41aef5;
+    margin-right: 5px;
+}
+.storage .listViewTable tr td a {
+    color: #616161;
+}

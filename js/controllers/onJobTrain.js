@@ -13,6 +13,26 @@ app.controller('onJobTrainCtrl', function ($scope, $http) {
     // 登入判斷
     $scope.authcheck = false;
 
+    // 時鐘
+    var timer = function () {
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        h = checkTime(h);
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('timerH').innerHTML = h;
+        document.getElementById('timerM').innerHTML = m;
+        document.getElementById('timerS').innerHTML = s;
+        var t = setTimeout(timer,1000);
+    };
+    function checkTime(i) {
+        if (i < 10) {i = "0" + i}
+        return i;
+    }
+    timer();
+
     // 取得用戶IP
     $http.get("https://ipinfo.io/").then(function (response) {
         $scope.showIP = response.data.ip;

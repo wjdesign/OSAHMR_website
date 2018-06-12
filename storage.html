@@ -2,21 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>安衛管理小幫手</title>
+    <title>安全衛生護具管理</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/searchBlock.css">
     <link rel="stylesheet" href="css/table.css">
-    <link rel="stylesheet" href="css/SHHelper.css">
-    <link rel="stylesheet" href="css/SHHelperInner.css">
+    <link rel="stylesheet" href="css/storage.css">
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/angular.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/controllers/SHHelper.js"></script>
+    <script src="js/controllers/storage.js"></script>
 </head>
-<body ng-app="myApp" ng-controller="SHHelperCtrl">
+<body ng-app="myApp" ng-controller="staffTrainCtrl">
 <div class="header">
     <div class="container">
         <div class="row">
@@ -31,11 +30,11 @@
             <div class="menuControl">
                 <ul class="headerMenu">
                     <li><a href="./index.html"><i class="glyphicon glyphicon-home"></i>首頁</a></li>
-                    <li><a href="./odnotice.html" ng-click="OdnoticeView = 1">職業災害通報管理</a></li>
+                    <li><a href="./odnotice.html">職業災害通報管理</a></li>
                     <li class="dropdown">
                         <a href="" class="dropdown-toggle">人員訓練管理系統<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="./staffTrain.html">專業證照管理</a></li>
+                            <li class="active"><a href="./staffTrain.html">專業證照管理</a></li>
                             <li><a href="./licenseCount.html">證照統計管理</a></li>
                             <li><a href="./onJobTrain.html">在職訓練管理</a></li>
                         </ul>
@@ -51,14 +50,14 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a class="active" href="./SHHelper.html" class="dropdown-toggle">安衛管理小幫手<span class="caret"></span></a>
+                        <a href="./SHHelper.html" class="dropdown-toggle">安衛管理小幫手<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="./SHHelper.html">使用說明</a></li>
-                            <li class="active"><a href="./SHHelperInner.html">進入系統</a></li>
+                            <li><a href="./SHHelperInner.html">進入系統</a></li>
                         </ul>
                     </li>
                     <li><a href="./activity.html">活動報名專區</a></li>
-                    <li><a href="./storage.html">安全衛生護具管理</a></li>
+                    <li><a class="active" href="./storage.html">安全衛生護具管理</a></li>
                 </ul>
             </div>
         </div>
@@ -206,98 +205,75 @@
                     <span>公告</span>
                     <marquee behavior="" direction="">{{MsgMarquee}}</marquee>
                 </div>
-                <!-- 安衛管理小幫手 - 進入系統 -->
-                <div class="panel-group SHHelper text-center">
-                    <h5 class="text-left">安衛管理小幫手<i class="glyphicon glyphicon-circle-arrow-right"></i>進入系統</h5>
-                    <p class="text-left">請依照貴公司之實際情形點選後，再按『完成』按鈕</p>
-                    <form class="form-inline SHHelperInner">
-                        <table class="dataSheet">
-                            <tr>
-                                <td class="tableTitle">產業類別：</td>
-                                <td class="text-left">
-                                    <input type="radio" id="radio1-1" name="radio1" checked><label for="radio1-1">營造業</label><br/>
-                                    <input type="radio" id="radio1-2" name="radio1"><label for="radio1-2">製造業及其他</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tableTitle">人數規模：</td>
-                                <td class="text-left">
-                                    <input type="radio" id="radio2-1" name="radio2" checked><label for="radio2-1">29人以下</label>
-                                    <input type="radio" id="radio2-2" name="radio2"><label for="radio2-2">30-99人</label>
-                                    <input type="radio" id="radio2-3" name="radio2"><label for="radio2-3">100-299人</label>
-                                    <input type="radio" id="radio2-4" name="radio2"><label for="radio2-4">200人以上</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tableTitle">危險性機械：<br/>設備之使用&nbsp;&nbsp;&nbsp;</td>
-                                <td class="text-left">
-                                    <input type="checkbox" id="checkbox1-1"><label for="checkbox1-1">危險性機械</label>
-                                    <p>3公噸以上固定式起重機、人字臂起重桿/1公噸以上之斯達卡式起重機/3公噸以上移動式起重機/營建用升降機/營建用提升機/吊籠</p>
-                                    <hr>
-                                    <input type="checkbox" id="checkbox1-2"><label for="checkbox1-2">危險性設備</label>
-                                    <p>鍋爐／壓力容器／高壓氣體特定設備／高壓氣體容器</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tableTitle">化學品之使用：</td>
-                                <td class="text-left">
-                                    <input type="radio" id="radio3-1" name="radio3" checked><label for="radio3-1">無</label><br/>
-                                    <input type="radio" id="radio3-2" name="radio3"><label for="radio3-2">有</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tableTitle">特殊/有害作業：</td>
-                                <td class="text-left">
-                                    <input type="radio" id="radio4-1" name="radio4" checked><label for="radio4-1">無</label><br/>
-                                    <input type="radio" id="radio4-2" name="radio4"><label for="radio4-2">有</label>
-                                    <p>高溫作業／噪音作業／游離輻射作業／鉛作業／異常氣壓作業／粉塵作業／四烷基鉛作業／局限空間/缺氧作業／有機溶劑作業／其他／特定化學物質作業</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tableTitle">特殊機械設備：</td>
-                                <td class="text-left">
-                                    <input type="radio" id="radio5-1" name="radio5" checked><label for="radio5-1">無</label><br/>
-                                    <input type="radio" id="radio5-2" name="radio5"><label for="radio5-2">有</label>
-                                    <p>動力衝剪機械／動力堆高機／木材加工用圓盤鋸／手推刨床／工業用機器人／研磨機</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tableTitle">異常工作負荷：</td>
-                                <td class="text-left">
-                                    <input type="radio" id="radio6-1" name="radio6" checked><label for="radio6-1">無</label><br/>
-                                    <input type="radio" id="radio6-2" name="radio6"><label for="radio6-2">有</label>
-                                    <p>輪班／長時間工作／夜間工作</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tableTitle">母性健康保護作業：</td>
-                                <td class="text-left">
-                                    <input type="radio" id="radio7-1" name="radio7" checked><label for="radio7-1">無</label><br/>
-                                    <input type="radio" id="radio7-2" name="radio7"><label for="radio7-2">有</label>
-                                    <p>雇主於得知女性勞工妊娠之日起至分娩後一年之期間，應實施母性健康保護</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tableTitle">人因性危害作業：</td>
-                                <td class="text-left">
-                                    <input type="radio" id="radio8-1" name="radio8" checked><label for="radio8-1">無</label><br/>
-                                    <input type="radio" id="radio8-2" name="radio8"><label for="radio8-2">有</label>
-                                    <p>勞工從事重複性之作業</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tableTitle">執行職務遭受身體或精神不法侵害預防：</td>
-                                <td class="text-left">
-                                    <input type="radio" id="radio9-1" name="radio9" checked><label for="radio9-1">無</label><br/>
-                                    <input type="radio" id="radio9-2" name="radio9"><label for="radio9-2">有</label>
-                                </td>
-                            </tr>
-                        </table>
-                    </form>
-                    <div class="items">
-                        <a href="" class="btn btn-primary">完成</a>
+                <!-- 最新消息 -->
+                <form class="form-inline storage">
+                    <h5 class="text-left">安全衛生護具管理</h5>
+                    <p class="text-left">本項系統功能以線上倉儲管理概念，將清潔人員常態性使用之安全衛生護具照片、採購、領用、使用及維護等資訊原則，予以線上提供使用者參考。對於已建置之護具資料如需進行移轉(轉入特定帳號或單位)者，需經系統管理者審核後放行。</p>
+                    <div class="searchBlock">
+                        <div class="form-group searchSelect">
+                            <label>工作類型：</label>
+                            <select class="form-control">
+                                <option selected>請選擇</option>
+                                <option>類型Ａ</option>
+                                <option>類型Ｂ</option>
+                            </select>
+                            <label>防護部位：</label>
+                            <select class="form-control">
+                                <option selected>請選擇</option>
+                                <option>頭部</option>
+                                <option>手部</option>
+                                <option>呼吸</option>
+                                <option>腿部</option>
+                                <option>其他</option>
+                            </select>
+                            <label>危害類別：</label>
+                            <select class="form-control">
+                                <option selected>請選擇</option>
+                                <option>墜落</option>
+                                <option>感電</option>
+                                <option>滑倒</option>
+                                <option>噴濺</option>
+                                <option>其他</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>搜尋內容：</label>
+                            <input type="text" class="form-control searchContent" placeholder="請輸入內容關鍵字">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-info">送出</button>
+                        </div>
                     </div>
-                </div>
+                    <table class="listViewTable">
+                        <tr>
+                            <th style="width: 30%;">護具名稱</th>
+                            <th>尺寸</th>
+                            <th>規格</th>
+                            <th>領用量</th>
+                            <th>庫存量</th>
+                            <th>護具照片</th>
+                            <th>執行作業</th>
+                        </tr>
+                        <tr ng-repeat="(key,value) in storages">
+                            <td class="text-left"><a href="#">{{value.name}}</a></td>
+                            <td class="text-center">{{value.size}}</td>
+                            <td class="text-center">{{value.format}}</td>
+                            <td class="text-center">{{value.using}}</td>
+                            <td class="text-center">{{value.reserve}}</td>
+                            <td class="text-center"><a href="{{value.pictureURL}}"><i class="glyphicon glyphicon-picture"></i></a></td>
+                            <td class="text-center"><a href="{{url}}">編輯</a><a href="">領用</a><a href="">歸還</a><a href="">報廢</a></td>
+                        </tr>
+                    </table>
+                    <ul class="pagination">
+                        <li class="previous"><a href="#">上一頁</a></li>
+                        <li class="active"><a href="">1</a></li>
+                        <li><a href="">2</a></li>
+                        <li><a href="">3</a></li>
+                        <li><a href="">...</a></li>
+                        <li class="next"><a href="#">下一頁</a></li>
+                    </ul>
+                    <div style="clear:both;"></div>
+                </form>
             </div>
         </div>
     </div>

@@ -6,6 +6,7 @@ body {
 }
 .container {
 	width: 1000px;
+    position: relative;
 }
 .position-relative {
 	position: relative;
@@ -26,7 +27,7 @@ body {
 }
 .header .menuControl .headerMenu > li {
     float: left;
-    width: 14.22222%;
+    width: 14.282222%;
 }
 .header .menuControl .headerMenu > li > a {
     text-align: center;
@@ -59,6 +60,26 @@ body {
     content: '';
     display: block;
     clear: both;
+}
+/*Timer*/
+.clock {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: linear-gradient(#222222 0%, #383838 50%, #222222 100%);
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    width: 120px;
+    height: 30px;
+    color: #fff;
+    line-height: 30px;
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 5px;
+    padding-left: 5px;
+}
+.clock span {
+    text-align: center;
 }
 
 /*mainContent-Left*/
