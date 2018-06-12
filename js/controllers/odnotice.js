@@ -8,7 +8,7 @@ var app = angular.module('myApp', []);
 app.controller('odnoticeCtrl', function ($scope, $http) {
 
     // 版本號
-    $scope.version = "?20180601";
+    $scope.version = "?20180613";
 
     // 登入判斷
     $scope.authcheck = false;
