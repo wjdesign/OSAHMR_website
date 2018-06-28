@@ -16,12 +16,18 @@ app.controller('SHTrainCtrl', function ($scope, $http) {
     // 時鐘
     var timer = function () {
         var today = new Date();
+        var Y = today.getFullYear();
+        var M = today.getMonth()+1;
+        var D = today.getDate();
         var h = today.getHours();
         var m = today.getMinutes();
         var s = today.getSeconds();
         h = checkTime(h);
         m = checkTime(m);
         s = checkTime(s);
+        document.getElementById('DateY').innerHTML = Y;
+        document.getElementById('DateM').innerHTML = M;
+        document.getElementById('DateD').innerHTML = D;
         document.getElementById('timerH').innerHTML = h;
         document.getElementById('timerM').innerHTML = m;
         document.getElementById('timerS').innerHTML = s;
